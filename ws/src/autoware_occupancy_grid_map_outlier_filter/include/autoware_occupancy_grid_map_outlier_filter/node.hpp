@@ -12,30 +12,27 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#ifndef OCCUPANCY_GRID_MAP_OUTLIER_FILTER_NODE_HPP_
-#define OCCUPANCY_GRID_MAP_OUTLIER_FILTER_NODE_HPP_
-
-#include <pcl/common/impl/common.hpp>
-#include <rclcpp/rclcpp.hpp>
-
-#include <geometry_msgs/msg/pose.hpp>
-#include <nav_msgs/msg/occupancy_grid.hpp>
-#include <sensor_msgs/msg/point_cloud2.hpp>
-#include <sensor_msgs/point_cloud2_iterator.hpp>
-#include <std_msgs/msg/header.hpp>
-
-#include <message_filters/subscriber.hpp>
-#include <message_filters/sync_policies/exact_time.hpp>
-#include <message_filters/synchronizer.hpp>
-#include <pcl/filters/extract_indices.h>
-#include <pcl/filters/radius_outlier_removal.h>
-#include <pcl/search/kdtree.h>
-#include <tf2_ros/buffer.h>
-#include <tf2_ros/message_filter.h>
-#include <tf2_ros/transform_listener.h>
+#pragma once
 
 #include <memory>
 #include <string>
+
+#include "geometry_msgs/msg/pose.hpp"
+#include "message_filters/subscriber.hpp"
+#include "message_filters/sync_policies/exact_time.hpp"
+#include "message_filters/synchronizer.hpp"
+#include "nav_msgs/msg/occupancy_grid.hpp"
+#include "pcl/common/impl/common.hpp"
+#include "pcl/filters/extract_indices.h"
+#include "pcl/filters/radius_outlier_removal.h"
+#include "pcl/search/kdtree.h"
+#include "rclcpp/rclcpp.hpp"
+#include "sensor_msgs/msg/point_cloud2.hpp"
+#include "sensor_msgs/point_cloud2_iterator.hpp"
+#include "std_msgs/msg/header.hpp"
+#include "tf2_ros/buffer.h"
+#include "tf2_ros/message_filter.h"
+#include "tf2_ros/transform_listener.h"
 
 namespace autoware::occupancy_grid_map_outlier_filter
 {
@@ -48,18 +45,20 @@ class RadiusSearch2dFilter
 {
 public:
   explicit RadiusSearch2dFilter(rclcpp::Node & node);
+  void filter(const PointCloud2 & input, const Pose & pose, PointCloud2 & output, PointCloud2 & outlier);
   void filter(
-    const PointCloud2 & input, const Pose & pose, PointCloud2 & output, PointCloud2 & outlier);
-  void filter(
-    const PointCloud2 & high_conf_xyz_cloud, const PointCloud2 & low_conf_xyz_cloud,
-    const Pose & pose, PointCloud2 & output, PointCloud2 & outlier);
+    const PointCloud2 & high_conf_xyz_cloud,
+    const PointCloud2 & low_conf_xyz_cloud,
+    const Pose & pose,
+    PointCloud2 & output,
+    PointCloud2 & outlier);
 
 private:
   float search_radius_;
   float min_points_and_distance_ratio_;
   int min_points_;
   int max_points_;
-  long unsigned int max_filter_points_nb_;
+  uint32_t max_filter_points_nb_;
   pcl::search::Search<pcl::PointXY>::Ptr kd_tree_;
 };
 
@@ -72,8 +71,11 @@ private:
   void onOccupancyGridMapAndPointCloud2(
     const OccupancyGrid::ConstSharedPtr & input_ogm, const PointCloud2::ConstSharedPtr & input_pc);
   void filterByOccupancyGridMap(
-    const OccupancyGrid & occupancy_grid_map, const PointCloud2 & pointcloud,
-    PointCloud2 & high_confidence, PointCloud2 & low_confidence, PointCloud2 & out_ogm);
+    const OccupancyGrid & occupancy_grid_map,
+    const PointCloud2 & pointcloud,
+    PointCloud2 & high_confidence,
+    PointCloud2 & low_confidence,
+    PointCloud2 & out_ogm);
   void splitPointCloudFrontBack(
     const PointCloud2::ConstSharedPtr & input_pc, PointCloud2 & front_pc, PointCloud2 & behind_pc);
   void initializerPointCloud2(const PointCloud2 & input, PointCloud2 & output);
@@ -90,8 +92,7 @@ private:
     void publishLowConfidence(const PointCloud2 & input, const Header & header);
 
   private:
-    void transformToBaseLink(
-      const PointCloud2 & pointcloud_input, const Header & header, PointCloud2 & output);
+    void transformToBaseLink(const PointCloud2 & pointcloud_input, const Header & header, PointCloud2 & output);
     rclcpp::Publisher<PointCloud2>::SharedPtr outlier_pointcloud_pub_;
     rclcpp::Publisher<PointCloud2>::SharedPtr low_confidence_pointcloud_pub_;
     rclcpp::Publisher<PointCloud2>::SharedPtr high_confidence_pointcloud_pub_;
@@ -123,5 +124,3 @@ private:
   int cost_threshold_;
 };
 }  // namespace autoware::occupancy_grid_map_outlier_filter
-
-#endif  // OCCUPANCY_GRID_MAP_OUTLIER_FILTER_NODE_HPP_

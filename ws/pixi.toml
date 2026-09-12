@@ -1,0 +1,40 @@
+[workspace]
+name = "roscon2026_the_legible_node_ws"
+description = ""
+channels = ["https://prefix.dev/conda-forge", "https://prefix.dev/robostack-lyrical"]
+platforms = ["linux-64", "win-64", "osx-64", "osx-arm64", "linux-aarch64"]
+
+[target.win.activation]
+scripts = ["install/setup.bat"]
+
+[target.unix.activation]
+scripts = ["install/setup.bash"]
+
+[dependencies]
+python = "*"
+# Build tools
+compilers = "*"
+cmake = "*"
+pkg-config = "*"
+make = "*"
+ninja = "*"
+# ROS specific tools
+rosdep = "*"
+colcon-common-extensions = "*"
+
+# lyrical
+ros-lyrical-desktop = "*"
+ros-lyrical-message-filters = ">=7.4.1,<8"
+
+[target.linux.dependencies]
+libgl-devel = "*"
+
+[target.linux-64.dependencies]
+# The conda compiler *wrapper* packages ship etc/conda/activate.d/activate-gcc_linux-64.sh,
+# which exports $LDFLAGS including "-Wl,--allow-shlib-undefined". CMake bakes that into
+# CMAKE_EXE_LINKER_FLAGS, and it's required to link ROS C++ targets against RoboStack's
+# *__rosidl_generator_py.so libs (which don't link libpython themselves; symbols are
+# resolved at runtime). The compilers 2.0.0 metapackage dropped these wrapper deps, so we
+# pin them explicitly. Arch-suffixed => linux-64 only (not target.linux, which also = aarch64).
+gcc_linux-64 = "*"
+gxx_linux-64 = "*"

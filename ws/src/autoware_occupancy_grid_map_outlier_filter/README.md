@@ -1,9 +1,9 @@
-# MODIFIED FROM https://github.com/autowarefoundation/autoware_universe/tree/85de7145ac7520a373c78749c1c9ba7da5d75157/perception/autoware_occupancy_grid_map_outlier_filter
 
 # autoware_occupancy_grid_map_outlier_filter
 
-> Modified to minimise external dependencies, see [MINIMISE_DEPENDENCIES_REPORT.md](./src/MINIMISE_DEPENDENCIES_REPORT.md).
-> Filtering behaviour is unchanged.
+> [!NOTE]
+> This package is forked from [autoware_occupancy_grid_map_outlier_filter](https://github.com/autowarefoundation/autoware_universe/tree/85de7145ac7520a373c78749c1c9ba7da5d75157/perception/autoware_occupancy_grid_map_outlier_filter) to reduce dependencies and make minor style updates for presentation clarity.
+> Its basic structure and functionality are unchanged.
 
 ## Purpose
 

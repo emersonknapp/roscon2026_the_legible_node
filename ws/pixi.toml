@@ -25,6 +25,7 @@ colcon-common-extensions = "*"
 # lyrical
 ros-lyrical-desktop = "*"
 ros-lyrical-message-filters = ">=7.4.1,<8"
+ros-lyrical-pcl-ros = "*"
 
 [target.linux.dependencies]
 libgl-devel = "*"

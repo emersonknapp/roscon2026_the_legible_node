@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include "occupancy_grid_map_outlier_filter/node.hpp"
+#include "autoware_occupancy_grid_map_outlier_filter/node.hpp"
 
 #include <algorithm>
 #include <cmath>
@@ -26,38 +26,14 @@
 #include "geometry_msgs/msg/pose_stamped.hpp"
 #include "pcl/point_types.h"
 #include "pcl_conversions/pcl_conversions.h"
+#include "pcl_ros/transforms.hpp"
 #include "rclcpp_components/register_node_macro.hpp"
-#include "sensor_msgs/point_cloud2_iterator.hpp"
 #include "tf2_eigen/tf2_eigen.hpp"
 
 RCLCPP_COMPONENTS_REGISTER_NODE(autoware::occupancy_grid_map_outlier_filter::OccupancyGridMapOutlierFilterComponent)
 
 namespace
 {
-// Transform every point in a PointCloud2 by an Eigen 4x4 matrix, in place into `output`.
-// Replaces pcl_ros::transformPointCloud to avoid the pcl_ros dependency.
-void transformPointCloud(
-  const Eigen::Matrix4f & transform,
-  const sensor_msgs::msg::PointCloud2 & input,
-  sensor_msgs::msg::PointCloud2 & output)
-{
-  output = input;
-  sensor_msgs::PointCloud2ConstIterator<float> iter_x_in(input, "x");
-  sensor_msgs::PointCloud2ConstIterator<float> iter_y_in(input, "y");
-  sensor_msgs::PointCloud2ConstIterator<float> iter_z_in(input, "z");
-  sensor_msgs::PointCloud2Iterator<float> iter_x_out(output, "x");
-  sensor_msgs::PointCloud2Iterator<float> iter_y_out(output, "y");
-  sensor_msgs::PointCloud2Iterator<float> iter_z_out(output, "z");
-  for (; iter_x_in != iter_x_in.end(); ++iter_x_in, ++iter_y_in, ++iter_z_in, ++iter_x_out, ++iter_y_out, ++iter_z_out)
-  {
-    const Eigen::Vector4f p(*iter_x_in, *iter_y_in, *iter_z_in, 1.0f);
-    const Eigen::Vector4f p_out = transform * p;
-    *iter_x_out = p_out.x();
-    *iter_y_out = p_out.y();
-    *iter_z_out = p_out.z();
-  }
-}
-
 bool transformPointcloud(
   const sensor_msgs::msg::PointCloud2 & input,
   const tf2_ros::Buffer & tf2,
@@ -75,7 +51,7 @@ bool transformPointcloud(
   }
   // transform pointcloud
   Eigen::Matrix4f tf_matrix = tf2::transformToEigen(tf_stamped.transform).matrix().cast<float>();
-  transformPointCloud(tf_matrix, input, output);
+  pcl_ros::transformPointCloud(tf_matrix, input, output);
   output.header.stamp = input.header.stamp;
   output.header.frame_id = target_frame;
   return true;

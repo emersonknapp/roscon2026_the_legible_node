@@ -494,6 +494,7 @@ environments:
       - conda: https://prefix.dev/robostack-lyrical/linux-64/ros-lyrical-nav-msgs-5.9.2-np2py314hb48eaa3_22.conda
       - conda: https://prefix.dev/robostack-lyrical/linux-64/ros-lyrical-pcl-conversions-2.9.0-np2py314hf7aebb1_22.conda
       - conda: https://prefix.dev/robostack-lyrical/linux-64/ros-lyrical-pcl-msgs-1.0.0-np2py314hb48eaa3_22.conda
+      - conda: https://prefix.dev/robostack-lyrical/linux-64/ros-lyrical-pcl-ros-2.9.0-np2py314hf7aebb1_22.conda
       - conda: https://prefix.dev/robostack-lyrical/linux-64/ros-lyrical-pendulum-control-0.37.8-np2py314hb48eaa3_22.conda
       - conda: https://prefix.dev/robostack-lyrical/linux-64/ros-lyrical-pendulum-msgs-0.37.8-np2py314hb48eaa3_22.conda
       - conda: https://prefix.dev/robostack-lyrical/linux-64/ros-lyrical-pluginlib-5.8.4-np2py314hb48eaa3_22.conda
@@ -1229,6 +1230,7 @@ environments:
       - conda: https://prefix.dev/robostack-lyrical/linux-aarch64/ros-lyrical-nav-msgs-5.9.2-np2py314h2824dc6_22.conda
       - conda: https://prefix.dev/robostack-lyrical/linux-aarch64/ros-lyrical-pcl-conversions-2.9.0-np2py314h4b0fd47_22.conda
       - conda: https://prefix.dev/robostack-lyrical/linux-aarch64/ros-lyrical-pcl-msgs-1.0.0-np2py314h2824dc6_22.conda
+      - conda: https://prefix.dev/robostack-lyrical/linux-aarch64/ros-lyrical-pcl-ros-2.9.0-np2py314h4b0fd47_22.conda
       - conda: https://prefix.dev/robostack-lyrical/linux-aarch64/ros-lyrical-pendulum-control-0.37.8-np2py314h2824dc6_22.conda
       - conda: https://prefix.dev/robostack-lyrical/linux-aarch64/ros-lyrical-pendulum-msgs-0.37.8-np2py314h2824dc6_22.conda
       - conda: https://prefix.dev/robostack-lyrical/linux-aarch64/ros-lyrical-pluginlib-5.8.4-np2py314h2824dc6_22.conda
@@ -1948,6 +1950,7 @@ environments:
       - conda: https://prefix.dev/robostack-lyrical/osx-64/ros-lyrical-nav-msgs-5.9.2-np2py314h8fa4802_22.conda
       - conda: https://prefix.dev/robostack-lyrical/osx-64/ros-lyrical-pcl-conversions-2.9.0-np2py314h6fed9a6_22.conda
       - conda: https://prefix.dev/robostack-lyrical/osx-64/ros-lyrical-pcl-msgs-1.0.0-np2py314h8fa4802_22.conda
+      - conda: https://prefix.dev/robostack-lyrical/osx-64/ros-lyrical-pcl-ros-2.9.0-np2py314h6fed9a6_22.conda
       - conda: https://prefix.dev/robostack-lyrical/osx-64/ros-lyrical-pendulum-msgs-0.37.8-np2py314h8fa4802_22.conda
       - conda: https://prefix.dev/robostack-lyrical/osx-64/ros-lyrical-pluginlib-5.8.4-np2py314h8fa4802_22.conda
       - conda: https://prefix.dev/robostack-lyrical/osx-64/ros-lyrical-point-cloud-transport-5.4.2-np2py314h8fa4802_22.conda
@@ -2647,6 +2650,7 @@ environments:
       - conda: https://prefix.dev/robostack-lyrical/osx-arm64/ros-lyrical-nav-msgs-5.9.2-np2py314h1e5664e_22.conda
       - conda: https://prefix.dev/robostack-lyrical/osx-arm64/ros-lyrical-pcl-conversions-2.9.0-np2py314hd3c552a_22.conda
       - conda: https://prefix.dev/robostack-lyrical/osx-arm64/ros-lyrical-pcl-msgs-1.0.0-np2py314h1e5664e_22.conda
+      - conda: https://prefix.dev/robostack-lyrical/osx-arm64/ros-lyrical-pcl-ros-2.9.0-np2py314hd3c552a_22.conda
       - conda: https://prefix.dev/robostack-lyrical/osx-arm64/ros-lyrical-pendulum-msgs-0.37.8-np2py314h1e5664e_22.conda
       - conda: https://prefix.dev/robostack-lyrical/osx-arm64/ros-lyrical-pluginlib-5.8.4-np2py314h1e5664e_22.conda
       - conda: https://prefix.dev/robostack-lyrical/osx-arm64/ros-lyrical-point-cloud-transport-5.4.2-np2py314h1e5664e_22.conda
@@ -3300,6 +3304,7 @@ environments:
       - conda: https://prefix.dev/robostack-lyrical/win-64/ros-lyrical-nav-msgs-5.9.2-np2py314ha8c8437_22.conda
       - conda: https://prefix.dev/robostack-lyrical/win-64/ros-lyrical-pcl-conversions-2.9.0-np2py314ha916235_22.conda
       - conda: https://prefix.dev/robostack-lyrical/win-64/ros-lyrical-pcl-msgs-1.0.0-np2py314ha8c8437_22.conda
+      - conda: https://prefix.dev/robostack-lyrical/win-64/ros-lyrical-pcl-ros-2.9.0-np2py314ha916235_22.conda
       - conda: https://prefix.dev/robostack-lyrical/win-64/ros-lyrical-pendulum-msgs-0.37.8-np2py314ha8c8437_22.conda
       - conda: https://prefix.dev/robostack-lyrical/win-64/ros-lyrical-pluginlib-5.8.4-np2py314ha8c8437_22.conda
       - conda: https://prefix.dev/robostack-lyrical/win-64/ros-lyrical-point-cloud-transport-5.4.2-np2py314ha8c8437_22.conda
@@ -32514,6 +32519,192 @@ packages:
   license: BSD-3-Clause
   size: 175056
   timestamp: 1782752361867
+- conda: https://prefix.dev/robostack-lyrical/linux-64/ros-lyrical-pcl-ros-2.9.0-np2py314hf7aebb1_22.conda
+  sha256: f3d05645bb41c9a28b0e6a5fcbeeacfd7e45018f7afe5548a36e630871c570ea
+  md5: d57a47dd2932c46b0f1cea9ac45970be
+  depends:
+  - eigen
+  - eigen-abi-devel
+  - libboost-devel
+  - libgl-devel
+  - libopengl-devel
+  - pcl
+  - python
+  - ros-lyrical-geometry-msgs
+  - ros-lyrical-pcl-conversions
+  - ros-lyrical-rclcpp
+  - ros-lyrical-rclcpp-components
+  - ros-lyrical-ros-workspace
+  - ros-lyrical-rosbag2-transport
+  - ros-lyrical-sensor-msgs
+  - ros-lyrical-tf2
+  - ros-lyrical-tf2-eigen
+  - ros-lyrical-tf2-geometry-msgs
+  - ros-lyrical-tf2-ros
+  - ros-lyrical-visualization-msgs
+  - ros2-distro-mutex 0.18.* lyrical_*
+  - vtk-base
+  - libgcc >=14
+  - __glibc >=2.28,<3.0.a0
+  - libstdcxx >=14
+  - eigen-abi >=5.0.1.80,<5.0.1.81.0a0
+  - pcl >=1.15.1,<1.15.2.0a0
+  - python_abi 3.14.* *_cp314
+  - numpy >=1.25,<3
+  - libgl >=1.7.0,<2.0a0
+  - libopengl >=1.7.0,<2.0a0
+  - vtk-base >=9.6.2,<9.6.3.0a0
+  - libboost >=1.90.0,<1.91.0a0
+  - ros2-distro-mutex >=0.18.0,<0.19.0a0
+  license: BSD-3-Clause
+  size: 930945
+  timestamp: 1782794367531
+- conda: https://prefix.dev/robostack-lyrical/linux-aarch64/ros-lyrical-pcl-ros-2.9.0-np2py314h4b0fd47_22.conda
+  sha256: 2305a056ccbd960985b5c016b53da2f753b7ef18eb415d712a8f6a74c8a42a5e
+  md5: a8f77a978d901ca3790f9d49ff7318b5
+  depends:
+  - eigen
+  - eigen-abi-devel
+  - libboost-devel
+  - libgl-devel
+  - libopengl-devel
+  - pcl
+  - python
+  - ros-lyrical-geometry-msgs
+  - ros-lyrical-pcl-conversions
+  - ros-lyrical-rclcpp
+  - ros-lyrical-rclcpp-components
+  - ros-lyrical-ros-workspace
+  - ros-lyrical-rosbag2-transport
+  - ros-lyrical-sensor-msgs
+  - ros-lyrical-tf2
+  - ros-lyrical-tf2-eigen
+  - ros-lyrical-tf2-geometry-msgs
+  - ros-lyrical-tf2-ros
+  - ros-lyrical-visualization-msgs
+  - ros2-distro-mutex 0.18.* lyrical_*
+  - vtk-base
+  - libstdcxx >=14
+  - libgcc >=14
+  - __glibc >=2.28,<3.0.a0
+  - numpy >=1.25,<3
+  - eigen-abi >=5.0.1.100,<5.0.1.101.0a0
+  - pcl >=1.15.1,<1.15.2.0a0
+  - vtk-base >=9.6.2,<9.6.3.0a0
+  - libboost >=1.90.0,<1.91.0a0
+  - libopengl >=1.7.0,<2.0a0
+  - python_abi 3.14.* *_cp314
+  - ros2-distro-mutex >=0.18.0,<0.19.0a0
+  - libgl >=1.7.0,<2.0a0
+  license: BSD-3-Clause
+  size: 941477
+  timestamp: 1782793234614
+- conda: https://prefix.dev/robostack-lyrical/osx-64/ros-lyrical-pcl-ros-2.9.0-np2py314h6fed9a6_22.conda
+  sha256: 5200a91c342518593deda9a7747ef8345a70eeb0c2376ea5119fd720c522650f
+  md5: fde71b26923bf48bbdb24845572af4f7
+  depends:
+  - eigen
+  - eigen-abi-devel
+  - libboost-devel
+  - pcl
+  - python
+  - ros-lyrical-geometry-msgs
+  - ros-lyrical-pcl-conversions
+  - ros-lyrical-rclcpp
+  - ros-lyrical-rclcpp-components
+  - ros-lyrical-ros-workspace
+  - ros-lyrical-rosbag2-transport
+  - ros-lyrical-sensor-msgs
+  - ros-lyrical-tf2
+  - ros-lyrical-tf2-eigen
+  - ros-lyrical-tf2-geometry-msgs
+  - ros-lyrical-tf2-ros
+  - ros-lyrical-visualization-msgs
+  - ros2-distro-mutex 0.18.* lyrical_*
+  - vtk-base
+  - libcxx >=18
+  - __osx >=11.0
+  - vtk-base >=9.6.2,<9.6.3.0a0
+  - numpy >=1.25,<3
+  - eigen-abi >=5.0.1.80,<5.0.1.81.0a0
+  - libboost >=1.90.0,<1.91.0a0
+  - ros2-distro-mutex >=0.18.0,<0.19.0a0
+  - python_abi 3.14.* *_cp314
+  - pcl >=1.15.1,<1.15.2.0a0
+  license: BSD-3-Clause
+  size: 744339
+  timestamp: 1782808267678
+- conda: https://prefix.dev/robostack-lyrical/osx-arm64/ros-lyrical-pcl-ros-2.9.0-np2py314hd3c552a_22.conda
+  sha256: 719979a5e26ac92b816ba1fe7c0d51e29e76977b6237c21a33f9bc9a3f4124b5
+  md5: 96d8fc9e8b55a91d99aa0adeeccfa212
+  depends:
+  - eigen
+  - eigen-abi-devel
+  - libboost-devel
+  - pcl
+  - python
+  - ros-lyrical-geometry-msgs
+  - ros-lyrical-pcl-conversions
+  - ros-lyrical-rclcpp
+  - ros-lyrical-rclcpp-components
+  - ros-lyrical-ros-workspace
+  - ros-lyrical-rosbag2-transport
+  - ros-lyrical-sensor-msgs
+  - ros-lyrical-tf2
+  - ros-lyrical-tf2-eigen
+  - ros-lyrical-tf2-geometry-msgs
+  - ros-lyrical-tf2-ros
+  - ros-lyrical-visualization-msgs
+  - ros2-distro-mutex 0.18.* lyrical_*
+  - vtk-base
+  - __osx >=11.0
+  - libcxx >=18
+  - pcl >=1.15.1,<1.15.2.0a0
+  - vtk-base >=9.6.2,<9.6.3.0a0
+  - python_abi 3.14.* *_cp314
+  - ros2-distro-mutex >=0.18.0,<0.19.0a0
+  - numpy >=1.25,<3
+  - libboost >=1.90.0,<1.91.0a0
+  - eigen-abi >=5.0.1.100,<5.0.1.101.0a0
+  license: BSD-3-Clause
+  size: 686943
+  timestamp: 1782792350689
+- conda: https://prefix.dev/robostack-lyrical/win-64/ros-lyrical-pcl-ros-2.9.0-np2py314ha916235_22.conda
+  sha256: 6bca6b13fdf8e826d1b7bad03b82b9604494b2a9d47d0096a77346c3930509e4
+  md5: 6f0d1c712550ac1832d3bd719954918e
+  depends:
+  - eigen
+  - eigen-abi-devel
+  - libboost-devel
+  - pcl
+  - python
+  - ros-lyrical-geometry-msgs
+  - ros-lyrical-pcl-conversions
+  - ros-lyrical-rclcpp
+  - ros-lyrical-rclcpp-components
+  - ros-lyrical-ros-workspace
+  - ros-lyrical-rosbag2-transport
+  - ros-lyrical-sensor-msgs
+  - ros-lyrical-tf2
+  - ros-lyrical-tf2-eigen
+  - ros-lyrical-tf2-geometry-msgs
+  - ros-lyrical-tf2-ros
+  - ros-lyrical-visualization-msgs
+  - ros2-distro-mutex 0.18.* lyrical_*
+  - vtk-base
+  - vc >=14.3,<15
+  - vc14_runtime >=14.44.35208
+  - ucrt >=10.0.20348.0
+  - ros2-distro-mutex >=0.18.0,<0.19.0a0
+  - vtk-base >=9.6.2,<9.6.3.0a0
+  - libboost >=1.90.0,<1.91.0a0
+  - eigen-abi >=5.0.1.100,<5.0.1.101.0a0
+  - pcl >=1.15.1,<1.15.2.0a0
+  - numpy >=1.25,<3
+  - python_abi 3.14.* *_cp314
+  license: BSD-3-Clause
+  size: 1127059
+  timestamp: 1782805281254
 - conda: https://prefix.dev/robostack-lyrical/linux-64/ros-lyrical-pendulum-control-0.37.8-np2py314hb48eaa3_22.conda
   sha256: cfbcf7ab56284267889ac253400d6024eaaa2e071c64ad5d77ac42609784cf7b
   md5: d66005872f15ba9c8f053e796e8a981f

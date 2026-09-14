@@ -21,6 +21,7 @@ ninja = "*"
 # ROS specific tools
 rosdep = "*"
 colcon-common-extensions = "*"
+colcon-mixin = "*"
 
 # lyrical
 ros-lyrical-desktop = "*"

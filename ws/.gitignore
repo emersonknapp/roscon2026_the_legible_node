@@ -1,10 +1,10 @@
 # Colcon / ROS 2 build artifacts
-build/
-install/
-log/
+/build/
+/install/
+/log/
 
 # Pixi
-.pixi/
+/.pixi/
 
 # Python
 __pycache__/

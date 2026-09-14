@@ -54,20 +54,23 @@ target_link_libraries(${PROJECT_NAME} PUBLIC
 ######
 # Node
 
-# add_library(${PROJECT_NAME}_component SHARED
-#   src/node.cpp
-# )
-# target_include_directories(${PROJECT_NAME}_component PUBLIC
-#   "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
-#   "$<INSTALL_INTERFACE:include>"
-# )
-# target_link_libraries(${PROJECT_NAME}_component PUBLIC
-#   ${PROJECT_NAME}
-# )
-# rclcpp_components_register_node(${PROJECT_NAME}_component
-#   PLUGIN "occupancy_grid_map_outlier_filter::Node"
-#   EXECUTABLE ${PROJECT_NAME}_node
-# )
+add_library(${PROJECT_NAME}_component SHARED
+  src/node.cpp
+)
+target_include_directories(${PROJECT_NAME}_component PUBLIC
+  "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
+  "$<INSTALL_INTERFACE:include>"
+)
+target_link_libraries(${PROJECT_NAME}_component PUBLIC
+  ${PROJECT_NAME}
+  rclcpp::rclcpp
+  rclcpp_components::component
+  tf2_eigen::tf2_eigen
+)
+rclcpp_components_register_node(${PROJECT_NAME}_component
+  PLUGIN "occupancy_grid_map_outlier_filter::Node"
+  EXECUTABLE ${PROJECT_NAME}_node
+)
 
 ##############
 # Installation
@@ -79,8 +82,8 @@ install(
 install(
   TARGETS
     ${PROJECT_NAME}
-    # ${PROJECT_NAME}_component
-    # ${PROJECT_NAME}_node
+    ${PROJECT_NAME}_component
+    ${PROJECT_NAME}_node
   EXPORT ${PROJECT_NAME}_TARGETS
   LIBRARY DESTINATION lib
   ARCHIVE DESTINATION lib

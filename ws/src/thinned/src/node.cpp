@@ -13,6 +13,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+#include "thin_ogmof/node.hpp"
+
 #include <memory>
 #include <optional>
 #include <string>
@@ -20,7 +22,6 @@
 
 #include "rclcpp_components/register_node_macro.hpp"
 #include "tf2_eigen/tf2_eigen.hpp"
-#include "thin_ogmof/node.hpp"
 
 RCLCPP_COMPONENTS_REGISTER_NODE(occupancy_grid_map_outlier_filter::Node)
 

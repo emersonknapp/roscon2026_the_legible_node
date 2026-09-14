@@ -1,11 +1,27 @@
+// Copyright 2026 Alistair English, Emerson Knapp
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
 #include "thin_ogmof/outlier_filter.hpp"
 
-#include "tf2_eigen/tf2_eigen.hpp"
-#include "pcl_ros/transforms.hpp"
+#include <algorithm>
+#include <string>
+#include <vector>
+
 #include "pcl/filters/extract_indices.h"
 #include "pcl_conversions/pcl_conversions.h"
-
-#include <algorithm>
+#include "pcl_ros/transforms.hpp"
+#include "tf2_eigen/tf2_eigen.hpp"
 
 namespace occupancy_grid_map_outlier_filter
 {
@@ -80,8 +96,7 @@ std::optional<char> getCost(const nav_msgs::msg::OccupancyGrid & map, const doub
 RadiusSearch2dFilter::RadiusSearch2dFilter(RadiusSearch2dFilter::Config config)
 : config_(config)
 , kd_tree_(pcl::make_shared<pcl::search::KdTree<pcl::PointXY>>(false))
-{
-}
+{}
 
 void RadiusSearch2dFilter::filter(
   const PointCloud2 & input, const Pose & pose, PointCloud2 & output, PointCloud2 & outlier)
@@ -104,8 +119,10 @@ void RadiusSearch2dFilter::filter(
   for (size_t i = 0; i < xy_cloud->points.size(); ++i) {
     const float distance = std::hypot(xy_cloud->points[i].x - pose.position.x, xy_cloud->points[i].y - pose.position.y);
     const int min_points_threshold = std::min(
-      std::max(static_cast<int>(std::lround(config_.min_points_and_distance_ratio / distance)), config_.min_points), config_.max_points);
-    const int points_num = kd_tree_->radiusSearch(i, config_.search_radius, k_indices, k_distances, min_points_threshold);
+      std::max(static_cast<int>(std::lround(config_.min_points_and_distance_ratio / distance)), config_.min_points),
+      config_.max_points);
+    const int points_num =
+      kd_tree_->radiusSearch(i, config_.search_radius, k_indices, k_distances, min_points_threshold);
 
     if (min_points_threshold <= points_num) {
       std::memcpy(&output.data[output_size], &input.data[i * point_step], point_step);
@@ -164,8 +181,10 @@ void RadiusSearch2dFilter::filter(
   for (size_t i = 0; i < low_conf_xyz_cloud.data.size() / low_conf_xyz_cloud.point_step; ++i) {
     const float distance = std::hypot(xy_cloud->points[i].x - pose.position.x, xy_cloud->points[i].y - pose.position.y);
     const int min_points_threshold = std::min(
-      std::max(static_cast<int>(std::lround(config_.min_points_and_distance_ratio / distance)), config_.min_points), config_.max_points);
-    const int points_num = kd_tree_->radiusSearch(i, config_.search_radius, k_indices, k_distances, min_points_threshold);
+      std::max(static_cast<int>(std::lround(config_.min_points_and_distance_ratio / distance)), config_.min_points),
+      config_.max_points);
+    const int points_num =
+      kd_tree_->radiusSearch(i, config_.search_radius, k_indices, k_distances, min_points_threshold);
 
     if (min_points_threshold <= points_num) {
       std::memcpy(
@@ -186,23 +205,22 @@ void RadiusSearch2dFilter::filter(
   outlier.data.resize(outlier_size);
 }
 
-RadiusSearch2dFilterNodeMixin::RadiusSearch2dFilterNodeMixin(rclcpp::node_interfaces::NodeParametersInterface & node_params)
+RadiusSearch2dFilterNodeMixin::RadiusSearch2dFilterNodeMixin(
+  rclcpp::node_interfaces::NodeParametersInterface & node_params)
 {
-  config.search_radius = node_params.declare_parameter(
-    "radius_search_2d_filter.search_radius", rclcpp::ParameterValue(1.0f)
-  ).get<float>();
-  config.min_points_and_distance_ratio = node_params.declare_parameter(
-    "radius_search_2d_filter.min_points_and_distance_ratio", rclcpp::ParameterValue(400.0)
-  ).get<float>();
-  config.min_points = node_params.declare_parameter(
-    "radius_search_2d_filter.min_points", rclcpp::ParameterValue(4)
-  ).get<int>();
-  config.max_points = node_params.declare_parameter(
-    "radius_search_2d_filter.max_points", rclcpp::ParameterValue(70)
-  ).get<int>();
-  config.max_filter_points_nb = node_params.declare_parameter(
-    "radius_search_2d_filter.max_filter_points_nb", rclcpp::ParameterValue(15000)
-  ).get<int>();
+  config.search_radius =
+    node_params.declare_parameter("radius_search_2d_filter.search_radius", rclcpp::ParameterValue(1.0f)).get<float>();
+  config.min_points_and_distance_ratio =
+    node_params
+      .declare_parameter("radius_search_2d_filter.min_points_and_distance_ratio", rclcpp::ParameterValue(400.0))
+      .get<float>();
+  config.min_points =
+    node_params.declare_parameter("radius_search_2d_filter.min_points", rclcpp::ParameterValue(4)).get<int>();
+  config.max_points =
+    node_params.declare_parameter("radius_search_2d_filter.max_points", rclcpp::ParameterValue(70)).get<int>();
+  config.max_filter_points_nb =
+    node_params.declare_parameter("radius_search_2d_filter.max_filter_points_nb", rclcpp::ParameterValue(15000))
+      .get<int>();
 }
 
 }  // namespace occupancy_grid_map_outlier_filter

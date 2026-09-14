@@ -16,16 +16,17 @@
 #pragma once
 
 #include <Eigen/Core>
-#include "rclcpp/node.hpp"
-#include "sensor_msgs/msg/point_cloud2.hpp"
-#include "nav_msgs/msg/occupancy_grid.hpp"
+#include <memory>
+#include <string>
+
 #include "message_filters/subscriber.hpp"
 #include "message_filters/sync_policies/exact_time.hpp"
 #include "message_filters/synchronizer.hpp"
+#include "nav_msgs/msg/occupancy_grid.hpp"
+#include "rclcpp/node.hpp"
+#include "sensor_msgs/msg/point_cloud2.hpp"
 #include "tf2_ros/buffer.hpp"
 #include "tf2_ros/transform_listener.hpp"
-
-#include <string>
 
 namespace occupancy_grid_map_outlier_filter
 {
@@ -48,6 +49,7 @@ private:
     bool use_radius_search_2d_filter = true;
     bool enable_debugger = false;
   };
+
   Parameters params_;
 
   // ROS communications interface
@@ -59,11 +61,9 @@ private:
   using Sync = message_filters::Synchronizer<SyncPolicy>;
   std::shared_ptr<Sync> sync_ptr_;
 
-
   // Implementation libraries
   std::shared_ptr<tf2_ros::Buffer> tf2_;
   std::shared_ptr<tf2_ros::TransformListener> tf2_listener_;
-
 };
 
 }  // namespace occupancy_grid_map_outlier_filter

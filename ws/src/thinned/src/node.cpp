@@ -32,11 +32,10 @@ Node::Node(const rclcpp::NodeOptions & options)
 : rclcpp::Node("OccupancyGridMapOutlierFilter", options)
 {
   // Configuration
-  params_.map_frame = declare_parameter<std::string>("map_frame");
-  params_.base_link_frame = declare_parameter<std::string>("base_link_frame");
-  params_.cost_threshold = declare_parameter<int>("cost_threshold");
-  params_.use_radius_search_2d_filter = declare_parameter<bool>("use_radius_search_2d_filter");
-  params_.enable_debugger = declare_parameter<bool>("enable_debugger");
+  params_.map_frame = declare_parameter<std::string>("map_frame", "map");
+  params_.base_link_frame = declare_parameter<std::string>("base_link_frame", "base_link");
+  params_.cost_threshold = declare_parameter<int>("cost_threshold", 45);
+  params_.use_radius_search_2d_filter = declare_parameter<bool>("use_radius_search_2d_filter", true);
 
   // Communications interface
   pub_pointcloud_ = create_publisher<PointCloud2>("~/output/pointcloud", rclcpp::QoS{5}.reliable());
@@ -62,9 +61,10 @@ Node::Node(const rclcpp::NodeOptions & options)
 
 void Node::sync_callback(const OccupancyGrid::ConstSharedPtr & input_ogm, const PointCloud2::ConstSharedPtr & input_pc)
 {
-  auto result_pc = filterPipeline(input_ogm, input_pc, tf2_, radius_search_2d_filter_, params_.base_link_frame);
-  if (result_pc) {
-    pub_pointcloud_->publish(std::move(result_pc));
+  auto result = filterPipeline(
+    input_ogm, input_pc, tf2_, radius_search_2d_filter_, params_.base_link_frame, params_.cost_threshold);
+  if (result) {
+    pub_pointcloud_->publish(std::move(result));
   }
 }
 

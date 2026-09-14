@@ -19,6 +19,10 @@ if(NOT CMAKE_CXX_STANDARD)
   set(CMAKE_CXX_STANDARD 17)
   set(CMAKE_CXX_STANDARD_REQUIRED ON)
 endif()
+if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+  add_compile_options(-Wall -Wextra -Wpedantic)
+  add_link_options(-Wl,-no-undefined)
+endif()
 
 find_package(ament_cmake REQUIRED)
 find_package(ament_cmake_auto REQUIRED)
@@ -36,10 +40,6 @@ target_include_directories(${PROJECT_NAME} PUBLIC
   "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
   "$<INSTALL_INTERFACE:include>"
 )
-# target_include_directories(${PROJECT_NAME} SYSTEM
-#   ${PCL_INCLUDE_DIRS}
-#   ${EIGEN3_INCLUDE_DIRS}
-# )
 target_link_libraries(${PROJECT_NAME} PUBLIC
   geometry_msgs::geometry_msgs
   nav_msgs::nav_msgs

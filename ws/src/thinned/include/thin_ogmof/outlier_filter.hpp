@@ -142,6 +142,7 @@ std::unique_ptr<PointCloud2> filterPipeline(
   const PointCloud2::ConstSharedPtr & input_pc,
   const std::shared_ptr<tf2_ros::Buffer> tf2,
   std::optional<RadiusSearch2dFilter> radius_search,
-  const std::string & base_link_frame);
+  const std::string & base_link_frame,
+  const int cost_threshold);
 
 }  // namespace occupancy_grid_map_outlier_filter

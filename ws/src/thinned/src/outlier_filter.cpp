@@ -276,16 +276,53 @@ void splitPointCloudFrontBack(
 void filterByOccupancyGridMap(
   const OccupancyGrid & occupancy_grid_map,
   const PointCloud2 & pointcloud,
+  const int cost_threshold,
   PointCloud2 & high_confidence,
   PointCloud2 & low_confidence,
-  PointCloud2 & out_ogm);
+  PointCloud2 & out_ogm)
+{
+  int x_offset = pointcloud.fields[pcl::getFieldIndex(pointcloud, "x")].offset;
+  int y_offset = pointcloud.fields[pcl::getFieldIndex(pointcloud, "y")].offset;
+  size_t high_confidence_size = 0;
+  size_t low_confidence_size = 0;
+  size_t out_ogm_size = 0;
+
+  for (size_t global_offset = 0; global_offset < pointcloud.data.size(); global_offset += pointcloud.point_step) {
+    float x;
+    float y;
+    std::memcpy(&x, &pointcloud.data[global_offset + x_offset], sizeof(float));
+    std::memcpy(&y, &pointcloud.data[global_offset + y_offset], sizeof(float));
+
+    const auto cost = getCost(occupancy_grid_map, x, y);
+    if (cost) {
+      if (cost_threshold < *cost) {
+        std::memcpy(
+          &high_confidence.data[high_confidence_size], &pointcloud.data[global_offset], pointcloud.point_step);
+        high_confidence_size += pointcloud.point_step;
+      } else {
+        std::memcpy(&low_confidence.data[low_confidence_size], &pointcloud.data[global_offset], pointcloud.point_step);
+        low_confidence_size += pointcloud.point_step;
+      }
+    } else {
+      std::memcpy(&out_ogm.data[out_ogm_size], &pointcloud.data[global_offset], pointcloud.point_step);
+      out_ogm_size += pointcloud.point_step;
+    }
+  }
+  high_confidence.data.resize(high_confidence_size);
+  low_confidence.data.resize(low_confidence_size);
+  out_ogm.data.resize(out_ogm_size);
+  finalizePointCloud2(pointcloud, high_confidence);
+  finalizePointCloud2(pointcloud, low_confidence);
+  finalizePointCloud2(pointcloud, out_ogm);
+}
 
 std::unique_ptr<PointCloud2> filterPipeline(
   const nav_msgs::msg::OccupancyGrid::ConstSharedPtr & input_ogm,
   const PointCloud2::ConstSharedPtr & input_pc,
   const std::shared_ptr<tf2_ros::Buffer> tf2_buf,
   std::optional<RadiusSearch2dFilter> radius_search,
-  const std::string & base_link_frame)
+  const std::string & base_link_frame,
+  const int cost_threshold)
 {
   // Transform to occupancy grid map frame
 
@@ -317,7 +354,7 @@ std::unique_ptr<PointCloud2> filterPipeline(
   initializePointCloud2(ogm_frame_pc, low_confidence_pc);
   initializePointCloud2(ogm_frame_pc, out_ogm_pc);
   // split front pointcloud into high and low confidence and out of map pointcloud
-  filterByOccupancyGridMap(*input_ogm, ogm_frame_pc, high_confidence_pc, low_confidence_pc, out_ogm_pc);
+  filterByOccupancyGridMap(*input_ogm, ogm_frame_pc, cost_threshold, high_confidence_pc, low_confidence_pc, out_ogm_pc);
   // Apply Radius search 2d filter for low confidence pointcloud
   PointCloud2 filtered_low_confidence_pc{};
   PointCloud2 outlier_pc{};
@@ -350,7 +387,7 @@ std::unique_ptr<PointCloud2> filterPipeline(
     }
   }
 
-  return std::move(base_link_frame_filtered_pc_ptr);
+  return base_link_frame_filtered_pc_ptr;
 }
 
 }  // namespace occupancy_grid_map_outlier_filter

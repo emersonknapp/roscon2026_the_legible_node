@@ -51,7 +51,6 @@ private:
     std::string base_link_frame = "base_link";
     int cost_threshold = 45;
     bool use_radius_search_2d_filter = true;
-    bool enable_debugger = false;
   };
 
   Parameters params_;

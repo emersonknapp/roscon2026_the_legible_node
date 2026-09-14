@@ -14,6 +14,7 @@
 
 #pragma once
 
+#include <memory>
 #include <optional>
 #include <string>
 
@@ -28,24 +29,41 @@
 namespace occupancy_grid_map_outlier_filter
 {
 
-bool transformPointcloud(
-  const sensor_msgs::msg::PointCloud2 & input,
-  const tf2_ros::Buffer & tf2,
-  const std::string & target_frame,
-  sensor_msgs::msg::PointCloud2 & output);
+using nav_msgs::msg::OccupancyGrid;
+using sensor_msgs::msg::PointCloud2;
 
+/// @brief
+/// @param input
+/// @param tf2
+/// @param target_frame
+/// @param output
+/// @return
+bool transformPointcloud(
+  const PointCloud2 & input, const tf2_ros::Buffer & tf2, const std::string & target_frame, PointCloud2 & output);
+
+/// @brief
+/// @param tf2
+/// @param target_frame_id
+/// @param src_frame_id
+/// @param time
+/// @return
 geometry_msgs::msg::PoseStamped getPoseStamped(
   const tf2_ros::Buffer & tf2,
   const std::string & target_frame_id,
   const std::string & src_frame_id,
   const rclcpp::Time & time);
 
-std::optional<char> getCost(const nav_msgs::msg::OccupancyGrid & map, const double & x, const double & y);
+/// @brief
+/// @param map
+/// @param x
+/// @param y
+/// @return
+std::optional<char> getCost(const OccupancyGrid & map, const double & x, const double & y);
 
+/// @brief
 class RadiusSearch2dFilter
 {
 public:
-  using PointCloud2 = sensor_msgs::msg::PointCloud2;
   using Pose = geometry_msgs::msg::Pose;
 
   struct Config
@@ -71,10 +89,59 @@ private:
   pcl::search::Search<pcl::PointXY>::Ptr kd_tree_;
 };
 
+/// @brief
 class RadiusSearch2dFilterNodeMixin
 {
+public:
   explicit RadiusSearch2dFilterNodeMixin(rclcpp::node_interfaces::NodeParametersInterface & node_params);
   RadiusSearch2dFilter::Config config;
 };
+
+/// @brief
+/// @param input
+/// @param output
+void initializePointCloud2(const PointCloud2 & input, PointCloud2 & output);
+
+/// @brief
+/// @param input
+/// @param output
+void finalizePointCloud2(const PointCloud2 & input, PointCloud2 & output);
+
+/// @brief
+/// @param output
+/// @param input
+void concatPointCloud2(PointCloud2 & output, const PointCloud2 & input);
+
+/// @brief
+/// @param input_pc
+/// @param front_pc
+/// @param behind_pc
+void splitPointCloudFrontBack(
+  const PointCloud2::ConstSharedPtr & input_pc, PointCloud2 & front_pc, PointCloud2 & behind_pc);
+
+/// @brief
+/// @param occupancy_grid_map
+/// @param pointcloud
+/// @param high_confidence
+/// @param low_confidence
+/// @param out_ogm
+void filterByOccupancyGridMap(
+  const OccupancyGrid & occupancy_grid_map,
+  const PointCloud2 & pointcloud,
+  PointCloud2 & high_confidence,
+  PointCloud2 & low_confidence,
+  PointCloud2 & out_ogm);
+
+/// @brief
+/// @param input_ogm
+/// @param input_pc
+/// @param tf2
+/// @return
+std::unique_ptr<PointCloud2> filterPipeline(
+  const OccupancyGrid::ConstSharedPtr & input_ogm,
+  const PointCloud2::ConstSharedPtr & input_pc,
+  const std::shared_ptr<tf2_ros::Buffer> tf2,
+  std::optional<RadiusSearch2dFilter> radius_search,
+  const std::string & base_link_frame);
 
 }  // namespace occupancy_grid_map_outlier_filter

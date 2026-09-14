@@ -15,7 +15,9 @@
 #include "thin_ogmof/outlier_filter.hpp"
 
 #include <algorithm>
+#include <memory>
 #include <string>
+#include <utility>
 #include <vector>
 
 #include "pcl/filters/extract_indices.h"
@@ -221,6 +223,134 @@ RadiusSearch2dFilterNodeMixin::RadiusSearch2dFilterNodeMixin(
   config.max_filter_points_nb =
     node_params.declare_parameter("radius_search_2d_filter.max_filter_points_nb", rclcpp::ParameterValue(15000))
       .get<int>();
+}
+
+void initializePointCloud2(const PointCloud2 & input, PointCloud2 & output)
+{
+  output.point_step = input.point_step;
+  output.data.resize(input.data.size());
+}
+
+void finalizePointCloud2(const PointCloud2 & input, PointCloud2 & output)
+{
+  output.header = input.header;
+  output.point_step = input.point_step;
+  output.fields = input.fields;
+  output.height = input.height;
+  output.is_bigendian = input.is_bigendian;
+  output.is_dense = input.is_dense;
+  output.width = output.data.size() / output.point_step / output.height;
+  output.row_step = output.data.size() / output.height;
+}
+
+void concatPointCloud2(PointCloud2 & output, const PointCloud2 & input)
+{
+  size_t output_size = output.data.size();
+  output.data.resize(output.data.size() + input.data.size());
+  std::memcpy(&output.data[output_size], &input.data[0], input.data.size());
+}
+
+void splitPointCloudFrontBack(
+  const PointCloud2::ConstSharedPtr & input_pc, PointCloud2 & front_pc, PointCloud2 & behind_pc)
+{
+  int x_offset = input_pc->fields[pcl::getFieldIndex(*input_pc, "x")].offset;
+  int point_step = input_pc->point_step;
+  size_t front_count = 0;
+  size_t behind_count = 0;
+
+  for (size_t global_offset = 0; global_offset < input_pc->data.size(); global_offset += point_step) {
+    float x;
+    std::memcpy(&x, &input_pc->data[global_offset + x_offset], sizeof(float));
+    if (x < 0.0) {
+      std::memcpy(&behind_pc.data[behind_count * point_step], &input_pc->data[global_offset], input_pc->point_step);
+      behind_count++;
+    } else {
+      std::memcpy(&front_pc.data[front_count * point_step], &input_pc->data[global_offset], input_pc->point_step);
+      front_count++;
+    }
+  }
+  front_pc.data.resize(front_count * point_step);
+  behind_pc.data.resize(behind_count * point_step);
+}
+
+void filterByOccupancyGridMap(
+  const OccupancyGrid & occupancy_grid_map,
+  const PointCloud2 & pointcloud,
+  PointCloud2 & high_confidence,
+  PointCloud2 & low_confidence,
+  PointCloud2 & out_ogm);
+
+std::unique_ptr<PointCloud2> filterPipeline(
+  const nav_msgs::msg::OccupancyGrid::ConstSharedPtr & input_ogm,
+  const PointCloud2::ConstSharedPtr & input_pc,
+  const std::shared_ptr<tf2_ros::Buffer> tf2_buf,
+  std::optional<RadiusSearch2dFilter> radius_search,
+  const std::string & base_link_frame)
+{
+  // Transform to occupancy grid map frame
+
+  PointCloud2 input_behind_pc{};
+  PointCloud2 input_front_pc{};
+  initializePointCloud2(*input_pc, input_front_pc);
+  initializePointCloud2(*input_pc, input_behind_pc);
+  // Split pointcloud into front and behind of the vehicle to reduce the calculation cost
+  splitPointCloudFrontBack(input_pc, input_front_pc, input_behind_pc);
+  finalizePointCloud2(*input_pc, input_front_pc);
+  finalizePointCloud2(*input_pc, input_behind_pc);
+
+  PointCloud2 ogm_frame_pc{};
+  PointCloud2 ogm_frame_input_behind_pc{};
+  {  // transform pointclouds
+    if (
+      !transformPointcloud(input_front_pc, *tf2_buf, input_ogm->header.frame_id, ogm_frame_pc) ||
+      !transformPointcloud(input_behind_pc, *tf2_buf, input_ogm->header.frame_id, ogm_frame_input_behind_pc))
+    {
+      return nullptr;
+    }
+  }
+
+  // Occupancy grid map based filter
+  PointCloud2 high_confidence_pc{};
+  PointCloud2 low_confidence_pc{};
+  PointCloud2 out_ogm_pc{};
+  initializePointCloud2(ogm_frame_pc, high_confidence_pc);
+  initializePointCloud2(ogm_frame_pc, low_confidence_pc);
+  initializePointCloud2(ogm_frame_pc, out_ogm_pc);
+  // split front pointcloud into high and low confidence and out of map pointcloud
+  filterByOccupancyGridMap(*input_ogm, ogm_frame_pc, high_confidence_pc, low_confidence_pc, out_ogm_pc);
+  // Apply Radius search 2d filter for low confidence pointcloud
+  PointCloud2 filtered_low_confidence_pc{};
+  PointCloud2 outlier_pc{};
+  initializePointCloud2(low_confidence_pc, outlier_pc);
+  initializePointCloud2(low_confidence_pc, filtered_low_confidence_pc);
+
+  if (radius_search.has_value()) {
+    auto pc_frame_pose_stamped =
+      getPoseStamped(*tf2_buf, input_ogm->header.frame_id, input_pc->header.frame_id, input_ogm->header.stamp);
+    radius_search->filter(
+      high_confidence_pc, low_confidence_pc, pc_frame_pose_stamped.pose, filtered_low_confidence_pc, outlier_pc);
+  } else {
+    std::memcpy(&outlier_pc.data[0], &low_confidence_pc.data[0], low_confidence_pc.data.size());
+    outlier_pc.data.resize(low_confidence_pc.data.size());
+  }
+
+  // Concatenate high confidence pointcloud from occupancy grid map and non-outlier pointcloud
+  PointCloud2 ogm_frame_filtered_pc{};
+  concatPointCloud2(ogm_frame_filtered_pc, high_confidence_pc);
+  concatPointCloud2(ogm_frame_filtered_pc, filtered_low_confidence_pc);
+  concatPointCloud2(ogm_frame_filtered_pc, out_ogm_pc);
+  concatPointCloud2(ogm_frame_filtered_pc, ogm_frame_input_behind_pc);
+  finalizePointCloud2(ogm_frame_pc, ogm_frame_filtered_pc);
+
+  auto base_link_frame_filtered_pc_ptr = std::make_unique<PointCloud2>();
+  {
+    ogm_frame_filtered_pc.header = ogm_frame_pc.header;
+    if (!transformPointcloud(ogm_frame_filtered_pc, *tf2_buf, base_link_frame, *base_link_frame_filtered_pc_ptr)) {
+      return nullptr;
+    }
+  }
+
+  return std::move(base_link_frame_filtered_pc_ptr);
 }
 
 }  // namespace occupancy_grid_map_outlier_filter

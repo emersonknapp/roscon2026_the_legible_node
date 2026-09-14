@@ -19,7 +19,6 @@
 #include <optional>
 #include <string>
 
-#include "Eigen/Core"
 #include "message_filters/pass_through.hpp"
 #include "message_filters/sync_policies/exact_time.hpp"
 #include "message_filters/synchronizer.hpp"

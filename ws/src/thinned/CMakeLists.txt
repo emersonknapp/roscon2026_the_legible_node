@@ -40,15 +40,16 @@ target_include_directories(${PROJECT_NAME} PUBLIC
   "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
   "$<INSTALL_INTERFACE:include>"
 )
-target_link_libraries(${PROJECT_NAME} PUBLIC
-  geometry_msgs::geometry_msgs
-  nav_msgs::nav_msgs
-  pcl_ros::pcl_ros_tf
-  rclcpp::rclcpp
-  sensor_msgs::sensor_msgs
-  tf2_eigen::tf2_eigen
-  tf2_ros::tf2_ros
-  ${PCL_LIBRARIES}
+target_link_libraries(${PROJECT_NAME}
+  PUBLIC
+    geometry_msgs::geometry_msgs
+    nav_msgs::nav_msgs
+    pcl_ros::pcl_ros_tf
+    rclcpp::rclcpp
+    sensor_msgs::sensor_msgs
+    tf2_ros::tf2_ros
+  PRIVATE
+    tf2_eigen::tf2_eigen
 )
 
 ######
@@ -61,11 +62,16 @@ target_include_directories(${PROJECT_NAME}_component PUBLIC
   "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
   "$<INSTALL_INTERFACE:include>"
 )
-target_link_libraries(${PROJECT_NAME}_component PUBLIC
-  ${PROJECT_NAME}
-  rclcpp::rclcpp
-  rclcpp_components::component
-  tf2_eigen::tf2_eigen
+target_link_libraries(${PROJECT_NAME}_component
+  PUBLIC
+    ${PROJECT_NAME}
+    message_filters::message_filters
+    nav_msgs::nav_msgs
+    rclcpp::rclcpp
+    sensor_msgs::sensor_msgs
+    tf2_ros::tf2_ros
+  PRIVATE
+    rclcpp_components::component
 )
 rclcpp_components_register_node(${PROJECT_NAME}_component
   PLUGIN "occupancy_grid_map_outlier_filter::Node"

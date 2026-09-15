@@ -85,6 +85,7 @@ protected:
 TEST_F(PipelineIntegrationTest, PassesHighConfidencePointThrough)
 {
   rclcpp::NodeOptions options;
+  options.use_intra_process_comms(true);
   options.parameter_overrides({
     {"map_frame", "map"},
     {"base_link_frame", "base_link"},
@@ -94,7 +95,9 @@ TEST_F(PipelineIntegrationTest, PassesHighConfidencePointThrough)
   });
   auto component = std::make_shared<OccupancyGridMapOutlierFilterComponent>(options);
 
-  auto helper = std::make_shared<rclcpp::Node>("test_helper");
+  // Both nodes share the process, so intra-process comms hands the messages over by pointer
+  // instead of routing them through the middleware.
+  auto helper = std::make_shared<rclcpp::Node>("test_helper", rclcpp::NodeOptions().use_intra_process_comms(true));
 
   // Static identity map -> base_link, latched, so the node's TF listener resolves lookups.
   tf2_ros::StaticTransformBroadcaster tf_broadcaster(*helper);

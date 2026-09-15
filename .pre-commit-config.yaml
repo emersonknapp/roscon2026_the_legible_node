@@ -1,5 +1,7 @@
 ---
 
+exclude: ^snippets/
+
 repos:
   # Polymath Code Standard formatters and linters
   - repo: https://github.com/polymathrobotics/polymath_code_standard.git

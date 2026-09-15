@@ -32,35 +32,24 @@ namespace occupancy_grid_map_outlier_filter
 using nav_msgs::msg::OccupancyGrid;
 using sensor_msgs::msg::PointCloud2;
 
-/// @brief
-/// @param input
-/// @param tf2
-/// @param target_frame
-/// @param output
-/// @return
+/// @brief Transform a pointcloud into target_frame using the given TF buffer.
+/// @param output Transformed cloud, written on success.
+/// @return False if the transform lookup fails.
 bool transformPointcloud(
   const PointCloud2 & input, const tf2_ros::Buffer & tf2, const std::string & target_frame, PointCloud2 & output);
 
-/// @brief
-/// @param tf2
-/// @param target_frame_id
-/// @param src_frame_id
-/// @param time
-/// @return
+/// @brief Look up the pose of src_frame_id in target_frame_id at the given time.
 geometry_msgs::msg::PoseStamped getPoseStamped(
   const tf2_ros::Buffer & tf2,
   const std::string & target_frame_id,
   const std::string & src_frame_id,
   const rclcpp::Time & time);
 
-/// @brief
-/// @param map
-/// @param x
-/// @param y
-/// @return
+/// @brief Sample the occupancy grid cost at world coordinate (x, y).
+/// @return The cell cost, or nullopt if (x, y) falls outside the map.
 std::optional<char> getCost(const OccupancyGrid & map, const double & x, const double & y);
 
-/// @brief
+/// @brief Rejects sparse points by 2D radius neighbor search over a kd-tree.
 class RadiusSearch2dFilter
 {
 public:
@@ -76,7 +65,12 @@ public:
   };
 
   explicit RadiusSearch2dFilter(Config config);
+
+  /// @brief Split input into surviving points (output) and rejected points (outlier).
   void filter(const PointCloud2 & input, const Pose & pose, PointCloud2 & output, PointCloud2 & outlier);
+
+  /// @brief As above, but seeds the neighbor search with high-confidence points so
+  /// low-confidence points near real obstacles survive. Only low-confidence points are classified.
   void filter(
     const PointCloud2 & high_conf_xyz_cloud,
     const PointCloud2 & low_conf_xyz_cloud,
@@ -89,7 +83,7 @@ private:
   pcl::search::Search<pcl::PointXY>::Ptr kd_tree_;
 };
 
-/// @brief
+/// @brief Declares this filter's parameters on a node and holds the resulting Config.
 class RadiusSearch2dFilterNodeMixin
 {
 public:
@@ -97,46 +91,31 @@ public:
   RadiusSearch2dFilter::Config config;
 };
 
-/// @brief
-/// @param input
-/// @param output
+/// @brief Size output to match input's layout and point count, ready to be filled.
 void initializePointCloud2(const PointCloud2 & input, PointCloud2 & output);
 
-/// @brief
-/// @param input
-/// @param output
+/// @brief Copy input's metadata onto output and recompute its width/row_step from data size.
 void finalizePointCloud2(const PointCloud2 & input, PointCloud2 & output);
 
-/// @brief
-/// @param output
-/// @param input
+/// @brief Append input's points onto the end of output.
 void concatPointCloud2(PointCloud2 & output, const PointCloud2 & input);
 
-/// @brief
-/// @param input_pc
-/// @param front_pc
-/// @param behind_pc
+/// @brief Partition input_pc into points ahead of (front_pc) and behind (behind_pc) the vehicle.
 void splitPointCloudFrontBack(
   const PointCloud2::ConstSharedPtr & input_pc, PointCloud2 & front_pc, PointCloud2 & behind_pc);
 
-/// @brief
-/// @param occupancy_grid_map
-/// @param pointcloud
-/// @param high_confidence
-/// @param low_confidence
-/// @param out_ogm
+/// @brief Bucket each point by its occupancy grid cost into high/low confidence and out-of-map clouds.
 void filterByOccupancyGridMap(
   const OccupancyGrid & occupancy_grid_map,
   const PointCloud2 & pointcloud,
+  const int cost_threshold,
   PointCloud2 & high_confidence,
   PointCloud2 & low_confidence,
   PointCloud2 & out_ogm);
 
-/// @brief
-/// @param input_ogm
-/// @param input_pc
-/// @param tf2
-/// @return
+/// @brief Full outlier-filter pipeline: split, transform, classify, radius-filter, recombine.
+/// @param radius_search Optional radius filter; when absent, low-confidence points are dropped.
+/// @return Filtered cloud in base_link_frame, or nullptr if a transform fails.
 std::unique_ptr<PointCloud2> filterPipeline(
   const OccupancyGrid::ConstSharedPtr & input_ogm,
   const PointCloud2::ConstSharedPtr & input_pc,

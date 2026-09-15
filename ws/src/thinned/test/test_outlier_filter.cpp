@@ -113,6 +113,9 @@ TEST(FilterPipeline, PassesHighConfidencePointThrough)
 {
   // A bare TF buffer with a static identity map<->base_link transform. No node needed.
   auto tf2 = std::make_shared<tf2_ros::Buffer>(std::make_shared<rclcpp::Clock>(RCL_ROS_TIME));
+  // The transforms are static and present, so no waiting is needed. This tells the buffer not to
+  // warn about lookups with a timeout, which it otherwise assumes require a message-servicing thread.
+  tf2->setUsingDedicatedThread(true);
   geometry_msgs::msg::TransformStamped identity;
   identity.header.frame_id = "map";
   identity.child_frame_id = "base_link";

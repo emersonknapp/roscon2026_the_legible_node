@@ -43,6 +43,13 @@ rclcpp_components_register_node(${PROJECT_NAME}
   PLUGIN "autoware::occupancy_grid_map_outlier_filter::OccupancyGridMapOutlierFilterComponent"
   EXECUTABLE ${PROJECT_NAME}_node)
 
+if(BUILD_TESTING)
+  ament_auto_find_test_dependencies()
+
+  ament_add_gtest(test_pipeline_integration test/test_pipeline_integration.cpp)
+  target_link_libraries(test_pipeline_integration ${PROJECT_NAME})
+endif()
+
 ament_auto_package(
   INSTALL_TO_SHARE
   config

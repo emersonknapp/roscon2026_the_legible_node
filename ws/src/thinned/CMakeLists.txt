@@ -102,4 +102,14 @@ install(
 )
 
 ament_export_targets(${PROJECT_NAME}_TARGETS HAS_LIBRARY_TARGET)
+
+#######
+# Tests
+
+if(BUILD_TESTING)
+  find_package(ament_cmake_gtest REQUIRED)
+  ament_add_gtest(test_outlier_filter test/test_outlier_filter.cpp)
+  target_link_libraries(test_outlier_filter ${PROJECT_NAME})
+endif()
+
 ament_package()

@@ -30,9 +30,9 @@
 #include "sensor_msgs/msg/point_cloud2.hpp"
 #include "sensor_msgs/point_cloud2_iterator.hpp"
 #include "std_msgs/msg/header.hpp"
-#include "tf2_ros/buffer.h"
-#include "tf2_ros/message_filter.h"
-#include "tf2_ros/transform_listener.h"
+#include "tf2_ros/buffer.hpp"
+#include "tf2_ros/message_filter.hpp"
+#include "tf2_ros/transform_listener.hpp"
 
 namespace autoware::occupancy_grid_map_outlier_filter
 {

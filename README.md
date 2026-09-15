@@ -39,6 +39,12 @@ cd ws/
 pixi install
 ```
 
+Import the source dependencies that aren't available on the pixi/RoboStack channels:
+
+```shell
+pixi run import-deps
+```
+
 ### Workflow
 
 Drop into an interactive shell

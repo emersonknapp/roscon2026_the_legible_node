@@ -6,6 +6,9 @@
 # Pixi
 /.pixi/
 
+# Source deps cloned via `pixi run import-deps` (see deps.repos)
+/src/deps/
+
 # Python
 __pycache__/
 *.py[cod]

@@ -1,0 +1,6 @@
+repositories:
+  # ROS 2 Node Definition Language (NoDL) - not packaged on pixi/robostack
+  nodl:
+    type: git
+    url: https://github.com/ros-tooling/nodl.git
+    version: main

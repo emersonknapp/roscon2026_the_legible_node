@@ -12,6 +12,8 @@ scripts = ["install/setup.bash"]
 
 [dependencies]
 python = "*"
+jsonschema = "*"
+"ruamel.yaml" = "*"
 # Build tools
 compilers = "*"
 cmake = "*"
@@ -22,11 +24,19 @@ ninja = "*"
 rosdep = "*"
 colcon-common-extensions = "*"
 colcon-mixin = "*"
+vcstool = "*"
 
 # lyrical
 ros-lyrical-desktop = "*"
 ros-lyrical-message-filters = ">=7.4.1,<8"
 ros-lyrical-pcl-ros = "*"
+
+[tasks]
+# Clone source deps not available on the pixi/robostack channels (see deps.repos).
+# Imported into src/deps/ which is gitignored.
+import-deps = "mkdir -p src/deps && vcs import src/deps < deps.repos"
+# Pull latest for the imported source deps
+update-deps = "vcs pull src/deps"
 
 [target.linux.dependencies]
 libgl-devel = "*"

@@ -1,0 +1,11 @@
+$ ros2 run demo_nodes_cpp talker
+[INFO] [1788818017.457077006] [talker]: Publishing: 'Hello World: 1'
+[INFO] [1788818018.457563424] [talker]: Publishing: 'Hello World: 2'
+[INFO] [1788818019.457427683] [talker]: Publishing: 'Hello World: 3'
+[INFO] [1788818020.457083541] [talker]: Publishing: 'Hello World: 4'
+[INFO] [1788818021.457130001] [talker]: Publishing: 'Hello World: 5'
+[INFO] [1788818022.457200140] [talker]: Publishing: 'Hello World: 6'
+[INFO] [1788818023.457067792] [talker]: Publishing: 'Hello World: 7'
+[INFO] [1788818024.457368167] [talker]: Publishing: 'Hello World: 8'
+[INFO] [1788818025.457155204] [talker]: Publishing: 'Hello World: 9'
+[INFO] [1788818026.457561291] [talker]: Publishing: 'Hello World: 10'

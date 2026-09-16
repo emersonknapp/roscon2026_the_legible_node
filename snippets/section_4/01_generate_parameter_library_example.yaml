@@ -1,0 +1,28 @@
+admittance_controller:
+  scientific_notation_num:
+    type: double
+    default_value: 0.00000000001
+    description: "Test scientific notation"
+    additional_constraints: "Any string can be here."
+  interpolation_mode:
+    type: string
+    default_value: "spline"
+    description: "specifies which algorithm to use for interpolation."
+    validation:
+      one_of<>: [ [ "spline", "linear" ] ]
+      "custom_validators::no_args_validator": null
+  subset_selection:
+    type: string_array
+    default_value: ["A", "B"]
+    description: "test subset of validator."
+    validation:
+      subset_of<>: [ [ "A", "B", "C"] ]
+  joints:
+    type: string_array
+    default_value: ["joint1", "joint2", "joint3"]
+    description: "specifies which joints will be used by the controller"
+  dof_names:
+    type: string_array
+    default_value: ["x", "y", "rz"]
+    description: "specifies which joints will be used by the controller"
+    additional_constraints: "Any string can be here."

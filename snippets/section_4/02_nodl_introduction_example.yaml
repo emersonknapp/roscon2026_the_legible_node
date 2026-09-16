@@ -1,0 +1,43 @@
+nodl_version: 2
+description: Drives a differential-base robot along a sequence of waypoints.
+
+include:
+  - ref: nodl://rclcpp/node
+
+parameters:
+  max_linear_speed:
+    type: double
+    default_value: 0.8
+    description: Upper bound on commanded forward speed, in m/s.
+
+publishers:
+  - name: ~/status
+    type: std_msgs/msg/String
+    qos: {history: KEEP_LAST, depth: 1, reliability: RELIABLE}
+    description: Human-readable status of the waypoint follower.
+
+subscriptions:
+  - name: odom
+    type: nav_msgs/msg/Odometry
+    qos: {history: KEEP_LAST, depth: 10, reliability: BEST_EFFORT}
+    description: Wheel/inertial odometry used to track pose.
+
+service_servers:
+  - name: ~/cancel
+    type: std_srvs/srv/Trigger
+    description: Drops any queued waypoints and stops the robot.
+
+service_clients:
+  - name: /global_costmap/clear_entirely
+    type: std_srvs/srv/Trigger
+    description: Asks the costmap server to clear itself before a retry.
+
+action_servers:
+  - name: ~/follow_waypoints
+    type: nav2_msgs/action/FollowWaypoints
+    description: Follows an ordered list of waypoints to completion.
+
+action_clients:
+  - name: /navigate_to_pose
+    type: nav2_msgs/action/NavigateToPose
+    description: Delegates single-goal navigation to the planner stack.

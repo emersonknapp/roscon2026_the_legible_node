@@ -30,6 +30,8 @@ vcstool = "*"
 ros-lyrical-desktop = "*"
 ros-lyrical-message-filters = ">=7.4.1,<8"
 ros-lyrical-pcl-ros = "*"
+# Used by nodl_generator_cpp/_py to turn NoDL parameters into a parameter library
+ros-lyrical-generate-parameter-library = "*"
 
 [tasks]
 # Clone source deps not available on the pixi/robostack channels (see deps.repos).

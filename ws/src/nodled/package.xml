@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>nodl_ogmof</name>
+  <version>0.52.0</version>
+  <description>NoDL refactor of autoware_occupancy_grid_map_outlier_filter</description>
+  <maintainer email="hello@alistairenglish.com">Alistair English</maintainer>
+  <maintainer email="emerson@polymathrobotics.com">Emerson Knapp</maintainer>
+  <license>Apache License 2.0</license>
+
+  <!-- Original authors -->
+  <author>Open Perception</author>
+  <author email="julius@kammerl.de">Julius Kammerl</author>
+  <author email="william@osrfoundation.org">William Woodall</author>
+
+  <buildtool_depend>ament_cmake_auto</buildtool_depend>
+  <buildtool_depend>ament_nodl</buildtool_depend>
+  <buildtool_depend>nodl_generator_cpp</buildtool_depend>
+
+  <build_depend>nodl_common_interfaces</build_depend>
+
+  <depend>geometry_msgs</depend>
+  <depend>message_filters</depend>
+  <depend>nav_msgs</depend>
+  <depend>pcl_ros</depend>
+  <depend>rclcpp</depend>
+  <depend>rclcpp_components</depend>
+  <depend>sensor_msgs</depend>
+  <depend>tf2_ros</depend>
+  <depend>thin_ogmof</depend>
+
+  <test_depend>launch_testing_ament_cmake</test_depend>
+  <test_depend>ros2nodl</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

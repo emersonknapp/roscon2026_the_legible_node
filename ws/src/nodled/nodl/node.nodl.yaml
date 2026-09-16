@@ -1,0 +1,45 @@
+---
+nodl_version: 2
+description: Occupancy-grid-map-based pointcloud outlier filter.
+
+include:
+  - ref: nodl://nodl_common_interfaces/node
+  - ref: local://radius_search_2d_filter.nodl.yaml
+
+parameters:
+  map_frame:
+    type: string
+    default_value: map
+    description: Frame the occupancy grid map is expressed in.
+    validation:
+      not_empty:
+  base_link_frame:
+    type: string
+    default_value: base_link
+    description: Frame the filtered pointcloud is published in.
+    validation:
+      not_empty:
+  cost_threshold:
+    type: int
+    default_value: 45
+    description: |
+      Occupancy cost at or above which a cell is treated as a high-confidence
+      obstacle. Occupancy costs range from 0 (free) to 100 (occupied).
+    validation:
+      bounds: [0, 100]
+
+publishers:
+  - name: ~/output/pointcloud
+    type: sensor_msgs/msg/PointCloud2
+    qos: {history: KEEP_LAST, depth: 5, reliability: RELIABLE}
+    description: Filtered pointcloud, in base_link_frame.
+
+subscriptions:
+  - name: ~/input/occupancy_grid_map
+    type: nav_msgs/msg/OccupancyGrid
+    qos: {history: KEEP_LAST, depth: 1, reliability: RELIABLE}
+    description: Occupancy grid map used to classify points by cost.
+  - name: ~/input/pointcloud
+    type: sensor_msgs/msg/PointCloud2
+    qos: {history: KEEP_LAST, depth: 5, reliability: BEST_EFFORT, durability: VOLATILE}
+    description: Raw input pointcloud to be filtered (SensorDataQoS).

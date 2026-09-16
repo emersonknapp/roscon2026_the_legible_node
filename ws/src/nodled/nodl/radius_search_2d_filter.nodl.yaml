@@ -1,0 +1,44 @@
+---
+nodl_version: 2
+description: Parameters for the 2D radius-search outlier filter stage.
+
+parameters:
+  use_radius_search_2d_filter:
+    type: bool
+    default_value: true
+    description: |
+      When true, low-confidence points are passed through the 2D radius-search
+      filter; when false they are dropped outright.
+  radius_search_2d_filter.search_radius:
+    type: double
+    default_value: 1.0
+    description: Neighbour search radius, in metres.
+    validation:
+      gt: [0.0]
+  radius_search_2d_filter.min_points_and_distance_ratio:
+    type: double
+    default_value: 400.0
+    description: |
+      Ratio used to scale the required neighbour count with distance:
+      the point-count threshold is ratio / distance, clamped to
+      [min_points, max_points].
+    validation:
+      gt: [0.0]
+  radius_search_2d_filter.min_points:
+    type: int
+    default_value: 4
+    description: Lower clamp on the required neighbour count.
+    validation:
+      gt_eq: [0]
+  radius_search_2d_filter.max_points:
+    type: int
+    default_value: 70
+    description: Upper clamp on the required neighbour count.
+    validation:
+      gt_eq: [0]
+  radius_search_2d_filter.max_filter_points_nb:
+    type: int
+    default_value: 15000
+    description: Maximum number of points the filter will process in one call.
+    validation:
+      gt: [0]

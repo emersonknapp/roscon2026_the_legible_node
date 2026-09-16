@@ -79,6 +79,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/linux-64/console_bridge-1.0.2-h924138e_1.tar.bz2
       - conda: https://prefix.dev/conda-forge/linux-64/contourpy-1.4.0-py314h5383ef5_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/coverage-7.16.0-py314h93e9acf_0.conda
+      - conda: https://prefix.dev/conda-forge/linux-64/cpp-expected-1.3.1-h171cf75_1.conda
       - conda: https://prefix.dev/conda-forge/linux-64/cppcheck-2.21.0-py314hceea1aa_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/cpython-3.14.7-py314hd8ed1ab_106.conda
       - conda: https://prefix.dev/conda-forge/linux-64/cryptography-50.0.1-py311hc91d8b8_1.conda
@@ -161,6 +162,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/linux-64/intel-gmmlib-22.10.2-h7148c6a_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/intel-media-driver-26.1.6-hecca717_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/jasper-4.2.9-hd038ad9_2.conda
+      - conda: https://prefix.dev/conda-forge/noarch/jinja2-3.1.6-pyhcf101f3_1.conda
       - conda: https://prefix.dev/conda-forge/linux-64/jsoncpp-1.9.8-h4dbf13b_2.conda
       - conda: https://prefix.dev/conda-forge/noarch/jsonschema-4.26.0-pyhcf101f3_1.conda
       - conda: https://prefix.dev/conda-forge/noarch/jsonschema-specifications-2025.9.1-pyhcf101f3_0.conda
@@ -313,6 +315,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/linux-64/lz4-4.4.5-py314ha0fddcf_2.conda
       - conda: https://prefix.dev/conda-forge/linux-64/lz4-c-1.10.0-hee9eb32_2.conda
       - conda: https://prefix.dev/conda-forge/linux-64/make-4.4.1-hb03c661_3.conda
+      - conda: https://prefix.dev/conda-forge/linux-64/markupsafe-3.0.3-py314h67df5f8_1.conda
       - conda: https://prefix.dev/conda-forge/linux-64/matplotlib-base-3.11.1-py314h9a9c090_2.conda
       - conda: https://prefix.dev/conda-forge/noarch/mccabe-0.7.0-pyhd8ed1ab_1.conda
       - conda: https://prefix.dev/conda-forge/linux-64/mpg123-1.33.7-h877a99e_1.conda
@@ -393,6 +396,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/noarch/referencing-0.37.0-pyhcf101f3_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/rhash-1.4.6-hb03c661_2.conda
       - conda: https://prefix.dev/robostack-lyrical/linux-64/ros-lyrical-desktop-0.13.0-hb0f4dca_23.conda
+      - conda: https://prefix.dev/robostack-lyrical/linux-64/ros-lyrical-generate-parameter-library-1.3.0-hb0f4dca_25.conda
       - conda: https://prefix.dev/robostack-lyrical/linux-64/ros-lyrical-message-filters-7.4.2-hb0f4dca_23.conda
       - conda: https://prefix.dev/robostack-lyrical/linux-64/ros-lyrical-pcl-ros-2.10.0-hb0f4dca_23.conda
       - conda: https://prefix.dev/robostack-lyrical/linux-64/ros2-action-msgs-2.4.5-np2py314hb48eaa3_23.conda
@@ -483,6 +487,8 @@ environments:
       - conda: https://prefix.dev/robostack-lyrical/linux-64/ros2-fastcdr-2.3.6-np2py314hb48eaa3_23.conda
       - conda: https://prefix.dev/robostack-lyrical/linux-64/ros2-fastdds-3.6.2-np2py314h0a1bc00_23.conda
       - conda: https://prefix.dev/robostack-lyrical/linux-64/ros2-foonathan-memory-vendor-1.4.1-np2py314hb48eaa3_23.conda
+      - conda: https://prefix.dev/robostack-lyrical/linux-64/ros2-generate-parameter-library-1.3.0-np2py314h79014b8_23.conda
+      - conda: https://prefix.dev/robostack-lyrical/linux-64/ros2-generate-parameter-library-py-1.3.0-np2py314hb48eaa3_23.conda
       - conda: https://prefix.dev/robostack-lyrical/linux-64/ros2-geometry-msgs-5.9.3-np2py314hb48eaa3_23.conda
       - conda: https://prefix.dev/robostack-lyrical/linux-64/ros2-geometry2-0.45.9-np2py314hb48eaa3_23.conda
       - conda: https://prefix.dev/robostack-lyrical/linux-64/ros2-gz-cmake-vendor-0.4.5-np2py314hb48eaa3_23.conda
@@ -649,6 +655,7 @@ environments:
       - conda: https://prefix.dev/robostack-lyrical/linux-64/ros2-rqt-shell-1.4.2-np2py314hb48eaa3_23.conda
       - conda: https://prefix.dev/robostack-lyrical/linux-64/ros2-rqt-srv-1.4.1-np2py314hb48eaa3_23.conda
       - conda: https://prefix.dev/robostack-lyrical/linux-64/ros2-rqt-topic-2.1.2-np2py314hb48eaa3_23.conda
+      - conda: https://prefix.dev/robostack-lyrical/linux-64/ros2-rsl-1.3.0-np2py314hb3040b0_23.conda
       - conda: https://prefix.dev/robostack-lyrical/linux-64/ros2-rti-connext-dds-cmake-module-1.2.7-np2py314hb48eaa3_23.conda
       - conda: https://prefix.dev/robostack-lyrical/linux-64/ros2-rttest-0.20.1-np2py314hb48eaa3_23.conda
       - conda: https://prefix.dev/robostack-lyrical/linux-64/ros2-rviz-common-15.2.5-np2py314hb48eaa3_23.conda
@@ -669,6 +676,7 @@ environments:
       - conda: https://prefix.dev/robostack-lyrical/linux-64/ros2-std-srvs-5.9.3-np2py314hb48eaa3_23.conda
       - conda: https://prefix.dev/robostack-lyrical/linux-64/ros2-stereo-msgs-5.9.3-np2py314hb48eaa3_23.conda
       - conda: https://prefix.dev/robostack-lyrical/linux-64/ros2-tango-icons-vendor-0.5.1-np2py314hb48eaa3_23.conda
+      - conda: https://prefix.dev/robostack-lyrical/linux-64/ros2-tcb-span-2.0.3-np2py314hb48eaa3_23.conda
       - conda: https://prefix.dev/robostack-lyrical/linux-64/ros2-teleop-twist-joy-2.6.5-np2py314hb48eaa3_23.conda
       - conda: https://prefix.dev/robostack-lyrical/linux-64/ros2-teleop-twist-keyboard-2.4.1-np2py314hb48eaa3_23.conda
       - conda: https://prefix.dev/robostack-lyrical/linux-64/ros2-tf2-0.45.9-np2py314hb48eaa3_23.conda
@@ -727,6 +735,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/linux-64/tk-8.6.13-noxft_h1df4ec4_4.conda
       - conda: https://prefix.dev/conda-forge/noarch/toml-0.10.2-pyhcf101f3_3.conda
       - conda: https://prefix.dev/conda-forge/noarch/tomli-2.4.1-pyhcf101f3_0.conda
+      - conda: https://prefix.dev/conda-forge/noarch/typeguard-4.6.0-pyhcf101f3_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/typing-extensions-4.16.0-h69aa097_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/typing-inspection-0.4.4-pyhcf101f3_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/typing_extensions-4.16.0-pyhcf101f3_0.conda
@@ -856,6 +865,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/linux-aarch64/console_bridge-1.0.2-hdd96247_1.tar.bz2
       - conda: https://prefix.dev/conda-forge/linux-aarch64/contourpy-1.4.0-py314h1f71c16_0.conda
       - conda: https://prefix.dev/conda-forge/linux-aarch64/coverage-7.16.0-py314ha6eade7_0.conda
+      - conda: https://prefix.dev/conda-forge/linux-aarch64/cpp-expected-1.3.1-hdc560ac_1.conda
       - conda: https://prefix.dev/conda-forge/linux-aarch64/cppcheck-2.21.0-py314h63ea2b9_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/cpython-3.14.7-py314hd8ed1ab_106.conda
       - conda: https://prefix.dev/conda-forge/linux-aarch64/cryptography-50.0.1-py311h9269228_1.conda
@@ -934,6 +944,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/linux-aarch64/imath-3.2.2-h92288e7_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/iniconfig-2.3.0-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/linux-aarch64/jasper-4.2.9-h8d4df48_2.conda
+      - conda: https://prefix.dev/conda-forge/noarch/jinja2-3.1.6-pyhcf101f3_1.conda
       - conda: https://prefix.dev/conda-forge/linux-aarch64/jsoncpp-1.9.8-h45ce4d5_2.conda
       - conda: https://prefix.dev/conda-forge/noarch/jsonschema-4.26.0-pyhcf101f3_1.conda
       - conda: https://prefix.dev/conda-forge/noarch/jsonschema-specifications-2025.9.1-pyhcf101f3_0.conda
@@ -1081,6 +1092,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/linux-aarch64/lz4-4.4.5-py314hc310517_2.conda
       - conda: https://prefix.dev/conda-forge/linux-aarch64/lz4-c-1.10.0-hfb11796_2.conda
       - conda: https://prefix.dev/conda-forge/linux-aarch64/make-4.4.1-he30d5cf_3.conda
+      - conda: https://prefix.dev/conda-forge/linux-aarch64/markupsafe-3.0.3-py314hb76de3f_1.conda
       - conda: https://prefix.dev/conda-forge/linux-aarch64/matplotlib-base-3.11.1-py314h95fdf5b_2.conda
       - conda: https://prefix.dev/conda-forge/noarch/mccabe-0.7.0-pyhd8ed1ab_1.conda
       - conda: https://prefix.dev/conda-forge/linux-aarch64/mpg123-1.33.7-h922aec4_1.conda
@@ -1159,6 +1171,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/noarch/referencing-0.37.0-pyhcf101f3_0.conda
       - conda: https://prefix.dev/conda-forge/linux-aarch64/rhash-1.4.6-he30d5cf_2.conda
       - conda: https://prefix.dev/robostack-lyrical/linux-aarch64/ros-lyrical-desktop-0.13.0-he8cfe8b_23.conda
+      - conda: https://prefix.dev/robostack-lyrical/linux-aarch64/ros-lyrical-generate-parameter-library-1.3.0-he8cfe8b_23.conda
       - conda: https://prefix.dev/robostack-lyrical/linux-aarch64/ros-lyrical-message-filters-7.4.2-he8cfe8b_23.conda
       - conda: https://prefix.dev/robostack-lyrical/linux-aarch64/ros-lyrical-pcl-ros-2.10.0-he8cfe8b_23.conda
       - conda: https://prefix.dev/robostack-lyrical/linux-aarch64/ros2-action-msgs-2.4.5-np2py314h2824dc6_23.conda
@@ -1249,6 +1262,8 @@ environments:
       - conda: https://prefix.dev/robostack-lyrical/linux-aarch64/ros2-fastcdr-2.3.6-np2py314h2824dc6_23.conda
       - conda: https://prefix.dev/robostack-lyrical/linux-aarch64/ros2-fastdds-3.6.2-np2py314haecfcff_23.conda
       - conda: https://prefix.dev/robostack-lyrical/linux-aarch64/ros2-foonathan-memory-vendor-1.4.1-np2py314h2824dc6_23.conda
+      - conda: https://prefix.dev/robostack-lyrical/linux-aarch64/ros2-generate-parameter-library-1.3.0-np2py314heff7773_23.conda
+      - conda: https://prefix.dev/robostack-lyrical/linux-aarch64/ros2-generate-parameter-library-py-1.3.0-np2py314h2824dc6_23.conda
       - conda: https://prefix.dev/robostack-lyrical/linux-aarch64/ros2-geometry-msgs-5.9.3-np2py314h2824dc6_23.conda
       - conda: https://prefix.dev/robostack-lyrical/linux-aarch64/ros2-geometry2-0.45.9-np2py314h2824dc6_23.conda
       - conda: https://prefix.dev/robostack-lyrical/linux-aarch64/ros2-gz-cmake-vendor-0.4.5-np2py314h2824dc6_23.conda
@@ -1415,6 +1430,7 @@ environments:
       - conda: https://prefix.dev/robostack-lyrical/linux-aarch64/ros2-rqt-shell-1.4.2-np2py314h2824dc6_23.conda
       - conda: https://prefix.dev/robostack-lyrical/linux-aarch64/ros2-rqt-srv-1.4.1-np2py314h2824dc6_23.conda
       - conda: https://prefix.dev/robostack-lyrical/linux-aarch64/ros2-rqt-topic-2.1.2-np2py314h2824dc6_23.conda
+      - conda: https://prefix.dev/robostack-lyrical/linux-aarch64/ros2-rsl-1.3.0-np2py314h80c2281_23.conda
       - conda: https://prefix.dev/robostack-lyrical/linux-aarch64/ros2-rti-connext-dds-cmake-module-1.2.7-np2py314h2824dc6_23.conda
       - conda: https://prefix.dev/robostack-lyrical/linux-aarch64/ros2-rttest-0.20.1-np2py314h2824dc6_23.conda
       - conda: https://prefix.dev/robostack-lyrical/linux-aarch64/ros2-rviz-common-15.2.5-np2py314h2824dc6_23.conda
@@ -1435,6 +1451,7 @@ environments:
       - conda: https://prefix.dev/robostack-lyrical/linux-aarch64/ros2-std-srvs-5.9.3-np2py314h2824dc6_23.conda
       - conda: https://prefix.dev/robostack-lyrical/linux-aarch64/ros2-stereo-msgs-5.9.3-np2py314h2824dc6_23.conda
       - conda: https://prefix.dev/robostack-lyrical/linux-aarch64/ros2-tango-icons-vendor-0.5.1-np2py314h2824dc6_23.conda
+      - conda: https://prefix.dev/robostack-lyrical/linux-aarch64/ros2-tcb-span-2.0.3-np2py314h2824dc6_23.conda
       - conda: https://prefix.dev/robostack-lyrical/linux-aarch64/ros2-teleop-twist-joy-2.6.5-np2py314h2824dc6_23.conda
       - conda: https://prefix.dev/robostack-lyrical/linux-aarch64/ros2-teleop-twist-keyboard-2.4.1-np2py314h2824dc6_23.conda
       - conda: https://prefix.dev/robostack-lyrical/linux-aarch64/ros2-tf2-0.45.9-np2py314h2824dc6_23.conda
@@ -1493,6 +1510,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/linux-aarch64/tk-8.6.13-noxft_hf03c496_4.conda
       - conda: https://prefix.dev/conda-forge/noarch/toml-0.10.2-pyhcf101f3_3.conda
       - conda: https://prefix.dev/conda-forge/noarch/tomli-2.4.1-pyhcf101f3_0.conda
+      - conda: https://prefix.dev/conda-forge/noarch/typeguard-4.6.0-pyhcf101f3_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/typing-extensions-4.16.0-h69aa097_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/typing-inspection-0.4.4-pyhcf101f3_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/typing_extensions-4.16.0-pyhcf101f3_0.conda
@@ -1621,6 +1639,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/osx-64/console_bridge-1.0.2-hbb4e6a2_1.tar.bz2
       - conda: https://prefix.dev/conda-forge/osx-64/contourpy-1.4.0-py314h0ba06c9_0.conda
       - conda: https://prefix.dev/conda-forge/osx-64/coverage-7.16.0-py314h9ae25e0_0.conda
+      - conda: https://prefix.dev/conda-forge/osx-64/cpp-expected-1.3.1-hebe015c_1.conda
       - conda: https://prefix.dev/conda-forge/osx-64/cppcheck-2.21.0-py314h0ef6b25_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/cpython-3.14.7-py314hd8ed1ab_106.conda
       - conda: https://prefix.dev/conda-forge/osx-64/cryptography-50.0.1-py311hc027f23_1.conda
@@ -1694,6 +1713,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/osx-64/imath-3.2.2-h6337977_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/iniconfig-2.3.0-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/osx-64/jasper-4.2.9-h36fbcc0_2.conda
+      - conda: https://prefix.dev/conda-forge/noarch/jinja2-3.1.6-pyhcf101f3_1.conda
       - conda: https://prefix.dev/conda-forge/osx-64/jsoncpp-1.9.8-h66869c8_2.conda
       - conda: https://prefix.dev/conda-forge/noarch/jsonschema-4.26.0-pyhcf101f3_1.conda
       - conda: https://prefix.dev/conda-forge/noarch/jsonschema-specifications-2025.9.1-pyhcf101f3_0.conda
@@ -1816,6 +1836,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/osx-64/lz4-4.4.5-py314haa3a75c_2.conda
       - conda: https://prefix.dev/conda-forge/osx-64/lz4-c-1.10.0-hc569e58_2.conda
       - conda: https://prefix.dev/conda-forge/osx-64/make-4.4.1-ha1e9b39_3.conda
+      - conda: https://prefix.dev/conda-forge/osx-64/markupsafe-3.0.3-py314h77fa6c7_1.conda
       - conda: https://prefix.dev/conda-forge/osx-64/matplotlib-base-3.11.1-py314hdf6dac4_2.conda
       - conda: https://prefix.dev/conda-forge/noarch/mccabe-0.7.0-pyhd8ed1ab_1.conda
       - conda: https://prefix.dev/conda-forge/osx-64/msgpack-python-1.2.2-py314h0ba06c9_2.conda
@@ -1978,6 +1999,8 @@ environments:
       - conda: https://prefix.dev/robostack-lyrical/osx-64/ros-lyrical-fastcdr-2.3.6-np2py314h8fa4802_22.conda
       - conda: https://prefix.dev/robostack-lyrical/osx-64/ros-lyrical-fastdds-3.6.1-np2py314h8fa4802_22.conda
       - conda: https://prefix.dev/robostack-lyrical/osx-64/ros-lyrical-foonathan-memory-vendor-1.4.1-np2py314h8fa4802_22.conda
+      - conda: https://prefix.dev/robostack-lyrical/osx-64/ros-lyrical-generate-parameter-library-1.1.0-np2py314hbbbd357_22.conda
+      - conda: https://prefix.dev/robostack-lyrical/osx-64/ros-lyrical-generate-parameter-library-py-1.1.0-np2py314h8fa4802_22.conda
       - conda: https://prefix.dev/robostack-lyrical/osx-64/ros-lyrical-geometry-msgs-5.9.2-np2py314h8fa4802_22.conda
       - conda: https://prefix.dev/robostack-lyrical/osx-64/ros-lyrical-geometry2-0.45.7-np2py314h8fa4802_22.conda
       - conda: https://prefix.dev/robostack-lyrical/osx-64/ros-lyrical-gz-cmake-vendor-0.4.4-np2py314h8fa4802_22.conda
@@ -2143,6 +2166,7 @@ environments:
       - conda: https://prefix.dev/robostack-lyrical/osx-64/ros-lyrical-rqt-shell-1.4.1-np2py314h8fa4802_22.conda
       - conda: https://prefix.dev/robostack-lyrical/osx-64/ros-lyrical-rqt-srv-1.4.1-np2py314h8fa4802_22.conda
       - conda: https://prefix.dev/robostack-lyrical/osx-64/ros-lyrical-rqt-topic-2.1.1-np2py314h8fa4802_22.conda
+      - conda: https://prefix.dev/robostack-lyrical/osx-64/ros-lyrical-rsl-1.3.0-np2py314h2abfc7c_22.conda
       - conda: https://prefix.dev/robostack-lyrical/osx-64/ros-lyrical-rti-connext-dds-cmake-module-1.2.7-np2py314h8fa4802_22.conda
       - conda: https://prefix.dev/robostack-lyrical/osx-64/ros-lyrical-rviz-common-15.2.3-np2py314h8fa4802_22.conda
       - conda: https://prefix.dev/robostack-lyrical/osx-64/ros-lyrical-rviz-default-plugins-15.2.3-np2py314h8fa4802_22.conda
@@ -2162,6 +2186,7 @@ environments:
       - conda: https://prefix.dev/robostack-lyrical/osx-64/ros-lyrical-std-srvs-5.9.2-np2py314h8fa4802_22.conda
       - conda: https://prefix.dev/robostack-lyrical/osx-64/ros-lyrical-stereo-msgs-5.9.2-np2py314h8fa4802_22.conda
       - conda: https://prefix.dev/robostack-lyrical/osx-64/ros-lyrical-tango-icons-vendor-0.5.1-np2py314h8fa4802_22.conda
+      - conda: https://prefix.dev/robostack-lyrical/osx-64/ros-lyrical-tcb-span-2.0.3-np2py314h8fa4802_22.conda
       - conda: https://prefix.dev/robostack-lyrical/osx-64/ros-lyrical-teleop-twist-joy-2.6.5-np2py314h8fa4802_22.conda
       - conda: https://prefix.dev/robostack-lyrical/osx-64/ros-lyrical-teleop-twist-keyboard-2.4.1-np2py314h8fa4802_22.conda
       - conda: https://prefix.dev/robostack-lyrical/osx-64/ros-lyrical-tf2-0.45.7-np2py314h8fa4802_22.conda
@@ -2219,6 +2244,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/osx-64/tk-8.6.13-ha6c374e_4.conda
       - conda: https://prefix.dev/conda-forge/noarch/toml-0.10.2-pyhcf101f3_3.conda
       - conda: https://prefix.dev/conda-forge/noarch/tomli-2.4.1-pyhcf101f3_0.conda
+      - conda: https://prefix.dev/conda-forge/noarch/typeguard-4.6.0-pyhcf101f3_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/typing-extensions-4.16.0-h69aa097_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/typing-inspection-0.4.4-pyhcf101f3_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/typing_extensions-4.16.0-pyhcf101f3_0.conda
@@ -2330,6 +2356,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/osx-arm64/console_bridge-1.0.2-h3e96240_1.tar.bz2
       - conda: https://prefix.dev/conda-forge/osx-arm64/contourpy-1.4.0-py314h2e43715_0.conda
       - conda: https://prefix.dev/conda-forge/osx-arm64/coverage-7.16.0-py314hae45268_0.conda
+      - conda: https://prefix.dev/conda-forge/osx-arm64/cpp-expected-1.3.1-h3feff0a_1.conda
       - conda: https://prefix.dev/conda-forge/osx-arm64/cppcheck-2.21.0-py314hf92ae93_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/cpython-3.14.7-py314hd8ed1ab_106.conda
       - conda: https://prefix.dev/conda-forge/osx-arm64/cryptography-50.0.1-py311hc28ac56_1.conda
@@ -2403,6 +2430,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/osx-arm64/imath-3.2.2-h13e8271_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/iniconfig-2.3.0-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/osx-arm64/jasper-4.2.9-hc111fee_2.conda
+      - conda: https://prefix.dev/conda-forge/noarch/jinja2-3.1.6-pyhcf101f3_1.conda
       - conda: https://prefix.dev/conda-forge/osx-arm64/jsoncpp-1.9.8-hfbe1efa_2.conda
       - conda: https://prefix.dev/conda-forge/noarch/jsonschema-4.26.0-pyhcf101f3_1.conda
       - conda: https://prefix.dev/conda-forge/noarch/jsonschema-specifications-2025.9.1-pyhcf101f3_0.conda
@@ -2525,6 +2553,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/osx-arm64/lz4-4.4.5-py314ha3c05fa_2.conda
       - conda: https://prefix.dev/conda-forge/osx-arm64/lz4-c-1.10.0-hdca3b7d_2.conda
       - conda: https://prefix.dev/conda-forge/osx-arm64/make-4.4.1-h84a0fba_3.conda
+      - conda: https://prefix.dev/conda-forge/osx-arm64/markupsafe-3.0.3-py314h6e9b3f0_1.conda
       - conda: https://prefix.dev/conda-forge/osx-arm64/matplotlib-base-3.11.1-py314h27b0870_2.conda
       - conda: https://prefix.dev/conda-forge/noarch/mccabe-0.7.0-pyhd8ed1ab_1.conda
       - conda: https://prefix.dev/conda-forge/osx-arm64/msgpack-python-1.2.2-py314hb1acb19_2.conda
@@ -2687,6 +2716,8 @@ environments:
       - conda: https://prefix.dev/robostack-lyrical/osx-arm64/ros-lyrical-fastcdr-2.3.6-np2py314h1e5664e_22.conda
       - conda: https://prefix.dev/robostack-lyrical/osx-arm64/ros-lyrical-fastdds-3.6.1-np2py314h1e5664e_22.conda
       - conda: https://prefix.dev/robostack-lyrical/osx-arm64/ros-lyrical-foonathan-memory-vendor-1.4.1-np2py314h1e5664e_22.conda
+      - conda: https://prefix.dev/robostack-lyrical/osx-arm64/ros-lyrical-generate-parameter-library-1.1.0-np2py314hdcb4947_22.conda
+      - conda: https://prefix.dev/robostack-lyrical/osx-arm64/ros-lyrical-generate-parameter-library-py-1.1.0-np2py314h1e5664e_22.conda
       - conda: https://prefix.dev/robostack-lyrical/osx-arm64/ros-lyrical-geometry-msgs-5.9.2-np2py314h1e5664e_22.conda
       - conda: https://prefix.dev/robostack-lyrical/osx-arm64/ros-lyrical-geometry2-0.45.7-np2py314h1e5664e_22.conda
       - conda: https://prefix.dev/robostack-lyrical/osx-arm64/ros-lyrical-gz-cmake-vendor-0.4.4-np2py314h1e5664e_22.conda
@@ -2852,6 +2883,7 @@ environments:
       - conda: https://prefix.dev/robostack-lyrical/osx-arm64/ros-lyrical-rqt-shell-1.4.1-np2py314h1e5664e_22.conda
       - conda: https://prefix.dev/robostack-lyrical/osx-arm64/ros-lyrical-rqt-srv-1.4.1-np2py314h1e5664e_22.conda
       - conda: https://prefix.dev/robostack-lyrical/osx-arm64/ros-lyrical-rqt-topic-2.1.1-np2py314h1e5664e_22.conda
+      - conda: https://prefix.dev/robostack-lyrical/osx-arm64/ros-lyrical-rsl-1.3.0-np2py314h701e7bc_22.conda
       - conda: https://prefix.dev/robostack-lyrical/osx-arm64/ros-lyrical-rti-connext-dds-cmake-module-1.2.7-np2py314h1e5664e_22.conda
       - conda: https://prefix.dev/robostack-lyrical/osx-arm64/ros-lyrical-rviz-common-15.2.3-np2py314h1e5664e_22.conda
       - conda: https://prefix.dev/robostack-lyrical/osx-arm64/ros-lyrical-rviz-default-plugins-15.2.3-np2py314h1e5664e_22.conda
@@ -2871,6 +2903,7 @@ environments:
       - conda: https://prefix.dev/robostack-lyrical/osx-arm64/ros-lyrical-std-srvs-5.9.2-np2py314h1e5664e_22.conda
       - conda: https://prefix.dev/robostack-lyrical/osx-arm64/ros-lyrical-stereo-msgs-5.9.2-np2py314h1e5664e_22.conda
       - conda: https://prefix.dev/robostack-lyrical/osx-arm64/ros-lyrical-tango-icons-vendor-0.5.1-np2py314h1e5664e_22.conda
+      - conda: https://prefix.dev/robostack-lyrical/osx-arm64/ros-lyrical-tcb-span-2.0.3-np2py314h1e5664e_22.conda
       - conda: https://prefix.dev/robostack-lyrical/osx-arm64/ros-lyrical-teleop-twist-joy-2.6.5-np2py314h1e5664e_22.conda
       - conda: https://prefix.dev/robostack-lyrical/osx-arm64/ros-lyrical-teleop-twist-keyboard-2.4.1-np2py314h1e5664e_22.conda
       - conda: https://prefix.dev/robostack-lyrical/osx-arm64/ros-lyrical-tf2-0.45.7-np2py314h1e5664e_22.conda
@@ -2928,6 +2961,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/osx-arm64/tk-8.6.13-hbeba79b_4.conda
       - conda: https://prefix.dev/conda-forge/noarch/toml-0.10.2-pyhcf101f3_3.conda
       - conda: https://prefix.dev/conda-forge/noarch/tomli-2.4.1-pyhcf101f3_0.conda
+      - conda: https://prefix.dev/conda-forge/noarch/typeguard-4.6.0-pyhcf101f3_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/typing-extensions-4.16.0-h69aa097_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/typing-inspection-0.4.4-pyhcf101f3_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/typing_extensions-4.16.0-pyhcf101f3_0.conda
@@ -3033,6 +3067,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/win-64/console_bridge-1.0.2-h5362a0b_1.tar.bz2
       - conda: https://prefix.dev/conda-forge/win-64/contourpy-1.4.0-py314hf309875_0.conda
       - conda: https://prefix.dev/conda-forge/win-64/coverage-7.16.0-py314h9aa99d3_0.conda
+      - conda: https://prefix.dev/conda-forge/win-64/cpp-expected-1.3.1-h477610d_1.conda
       - conda: https://prefix.dev/conda-forge/win-64/cppcheck-2.21.0-py314h7ae7f31_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/cpython-3.14.7-py314hd8ed1ab_106.conda
       - conda: https://prefix.dev/conda-forge/win-64/cryptography-50.0.1-py311h67a9792_1.conda
@@ -3100,6 +3135,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/win-64/imath-3.2.2-h1608b31_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/iniconfig-2.3.0-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/win-64/jasper-4.2.9-h1339676_2.conda
+      - conda: https://prefix.dev/conda-forge/noarch/jinja2-3.1.6-pyhcf101f3_1.conda
       - conda: https://prefix.dev/conda-forge/win-64/jsoncpp-1.9.8-h477610d_2.conda
       - conda: https://prefix.dev/conda-forge/noarch/jsonschema-4.26.0-pyhcf101f3_1.conda
       - conda: https://prefix.dev/conda-forge/noarch/jsonschema-specifications-2025.9.1-pyhcf101f3_0.conda
@@ -3205,6 +3241,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/win-64/lz4-4.4.5-py314hfc2a91f_2.conda
       - conda: https://prefix.dev/conda-forge/win-64/lz4-c-1.10.0-h6a83c73_2.conda
       - conda: https://prefix.dev/conda-forge/win-64/make-4.4.1-hba3369d_3.conda
+      - conda: https://prefix.dev/conda-forge/win-64/markupsafe-3.0.3-py314h2359020_1.conda
       - conda: https://prefix.dev/conda-forge/win-64/matplotlib-base-3.11.1-py314h2061cd4_2.conda
       - conda: https://prefix.dev/conda-forge/noarch/mccabe-0.7.0-pyhd8ed1ab_1.conda
       - conda: https://prefix.dev/conda-forge/win-64/mkl-2026.1.0-hac47afa_235.conda
@@ -3282,6 +3319,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/win-64/rav1e-0.8.1-h007690e_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/referencing-0.37.0-pyhcf101f3_0.conda
       - conda: https://prefix.dev/robostack-lyrical/win-64/ros-lyrical-desktop-0.13.0-h9490d1a_23.conda
+      - conda: https://prefix.dev/robostack-lyrical/win-64/ros-lyrical-generate-parameter-library-1.3.0-h9490d1a_23.conda
       - conda: https://prefix.dev/robostack-lyrical/win-64/ros-lyrical-message-filters-7.4.2-h9490d1a_23.conda
       - conda: https://prefix.dev/robostack-lyrical/win-64/ros-lyrical-pcl-ros-2.10.0-h9490d1a_23.conda
       - conda: https://prefix.dev/robostack-lyrical/win-64/ros2-action-msgs-2.4.5-np2py314ha8c8437_23.conda
@@ -3372,6 +3410,8 @@ environments:
       - conda: https://prefix.dev/robostack-lyrical/win-64/ros2-fastcdr-2.3.6-np2py314ha8c8437_23.conda
       - conda: https://prefix.dev/robostack-lyrical/win-64/ros2-fastdds-3.6.2-np2py314h275b0f8_23.conda
       - conda: https://prefix.dev/robostack-lyrical/win-64/ros2-foonathan-memory-vendor-1.4.1-np2py314ha8c8437_23.conda
+      - conda: https://prefix.dev/robostack-lyrical/win-64/ros2-generate-parameter-library-1.3.0-np2py314hae7bab9_23.conda
+      - conda: https://prefix.dev/robostack-lyrical/win-64/ros2-generate-parameter-library-py-1.3.0-np2py314ha8c8437_23.conda
       - conda: https://prefix.dev/robostack-lyrical/win-64/ros2-geometry-msgs-5.9.3-np2py314ha8c8437_23.conda
       - conda: https://prefix.dev/robostack-lyrical/win-64/ros2-geometry2-0.45.9-np2py314ha8c8437_23.conda
       - conda: https://prefix.dev/robostack-lyrical/win-64/ros2-gz-cmake-vendor-0.4.5-np2py314ha8c8437_23.conda
@@ -3537,6 +3577,7 @@ environments:
       - conda: https://prefix.dev/robostack-lyrical/win-64/ros2-rqt-shell-1.4.2-np2py314ha8c8437_23.conda
       - conda: https://prefix.dev/robostack-lyrical/win-64/ros2-rqt-srv-1.4.1-np2py314ha8c8437_23.conda
       - conda: https://prefix.dev/robostack-lyrical/win-64/ros2-rqt-topic-2.1.2-np2py314ha8c8437_23.conda
+      - conda: https://prefix.dev/robostack-lyrical/win-64/ros2-rsl-1.3.0-np2py314h1eb901f_23.conda
       - conda: https://prefix.dev/robostack-lyrical/win-64/ros2-rti-connext-dds-cmake-module-1.2.7-np2py314ha8c8437_23.conda
       - conda: https://prefix.dev/robostack-lyrical/win-64/ros2-rviz-common-15.2.5-np2py314ha8c8437_23.conda
       - conda: https://prefix.dev/robostack-lyrical/win-64/ros2-rviz-default-plugins-15.2.5-np2py314ha8c8437_23.conda
@@ -3556,6 +3597,7 @@ environments:
       - conda: https://prefix.dev/robostack-lyrical/win-64/ros2-std-srvs-5.9.3-np2py314ha8c8437_23.conda
       - conda: https://prefix.dev/robostack-lyrical/win-64/ros2-stereo-msgs-5.9.3-np2py314ha8c8437_23.conda
       - conda: https://prefix.dev/robostack-lyrical/win-64/ros2-tango-icons-vendor-0.5.1-np2py314ha8c8437_23.conda
+      - conda: https://prefix.dev/robostack-lyrical/win-64/ros2-tcb-span-2.0.3-np2py314ha8c8437_23.conda
       - conda: https://prefix.dev/robostack-lyrical/win-64/ros2-teleop-twist-joy-2.6.5-np2py314ha8c8437_23.conda
       - conda: https://prefix.dev/robostack-lyrical/win-64/ros2-teleop-twist-keyboard-2.4.1-np2py314ha8c8437_23.conda
       - conda: https://prefix.dev/robostack-lyrical/win-64/ros2-tf2-0.45.9-np2py314ha8c8437_23.conda
@@ -3608,6 +3650,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/win-64/tk-8.6.13-h967ab96_4.conda
       - conda: https://prefix.dev/conda-forge/noarch/toml-0.10.2-pyhcf101f3_3.conda
       - conda: https://prefix.dev/conda-forge/noarch/tomli-2.4.1-pyhcf101f3_0.conda
+      - conda: https://prefix.dev/conda-forge/noarch/typeguard-4.6.0-pyhcf101f3_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/typing-extensions-4.16.0-h69aa097_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/typing-inspection-0.4.4-pyhcf101f3_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/typing_extensions-4.16.0-pyhcf101f3_0.conda
@@ -6342,6 +6385,53 @@ packages:
   license_family: APACHE
   size: 471784
   timestamp: 1787965744394
+- conda: https://prefix.dev/conda-forge/linux-64/cpp-expected-1.3.1-h171cf75_1.conda
+  sha256: 6a905f317b93104444dc74875933a7cdf65fa14ae05dd6485ece6ffd9d0b5e89
+  md5: 451367db888b29ad0db6b298669fbe77
+  depends:
+  - libstdcxx >=14
+  - libgcc >=14
+  - __glibc >=2.17,<3.0.a0
+  license: CC0-1.0
+  size: 24388
+  timestamp: 1785920465106
+- conda: https://prefix.dev/conda-forge/linux-aarch64/cpp-expected-1.3.1-hdc560ac_1.conda
+  sha256: 178992e56e45feec10bb4292c8e5a9dd13b997470e624a58b1af14004765c697
+  md5: 9d634b13d6b78f143345f2932ae80700
+  depends:
+  - libstdcxx >=14
+  - libgcc >=14
+  license: CC0-1.0
+  size: 25271
+  timestamp: 1785920466877
+- conda: https://prefix.dev/conda-forge/osx-64/cpp-expected-1.3.1-hebe015c_1.conda
+  sha256: 9a34347a88e1abe8b72cf88d16c2156a1b0f65cd111fbd6758bcc1655b962091
+  md5: 622c5bf0b90ac72e13a195798b10e825
+  depends:
+  - libcxx >=19
+  - __osx >=11.0
+  license: CC0-1.0
+  size: 25323
+  timestamp: 1785920719997
+- conda: https://prefix.dev/conda-forge/osx-arm64/cpp-expected-1.3.1-h3feff0a_1.conda
+  sha256: 83819551a243ac95a96867977a0c7e2661d9e06ca268026c93d2c9f93969424f
+  md5: 93748a43e1a27821795af6701b7c06be
+  depends:
+  - libcxx >=19
+  - __osx >=11.0
+  license: CC0-1.0
+  size: 25909
+  timestamp: 1785920661291
+- conda: https://prefix.dev/conda-forge/win-64/cpp-expected-1.3.1-h477610d_1.conda
+  sha256: ca7f86a8f5d91dffcbc0a720bb4c3be8b35ccfb8e1e44cfa43c95dd13b6c83fc
+  md5: 8f83a0d68492c0d19528ce750d6566b9
+  depends:
+  - vc >=14.3,<15
+  - vc14_runtime >=14.44.35208
+  - ucrt >=10.0.20348.0
+  license: CC0-1.0
+  size: 22027
+  timestamp: 1785920525392
 - conda: https://prefix.dev/conda-forge/linux-64/cppcheck-2.21.0-py314hceea1aa_0.conda
   sha256: 0f163304ab7078beaffeebd35a977dea80d6e66bd3ff666dc57b0c2e26668da7
   md5: b2a11c950f1d58bde29a1b3554688173
@@ -9939,6 +10029,17 @@ packages:
   license: JasPer-2.0
   size: 468745
   timestamp: 1788279853208
+- conda: https://prefix.dev/conda-forge/noarch/jinja2-3.1.6-pyhcf101f3_1.conda
+  sha256: fc9ca7348a4f25fed2079f2153ecdcf5f9cf2a0bc36c4172420ca09e1849df7b
+  md5: 04558c96691bed63104678757beb4f8d
+  depends:
+  - markupsafe >=2.0
+  - python >=3.10
+  - python
+  license: BSD-3-Clause
+  license_family: BSD
+  size: 120685
+  timestamp: 1764517220861
 - conda: https://prefix.dev/conda-forge/linux-64/jsoncpp-1.9.8-h4dbf13b_2.conda
   sha256: 67f1061eef59cecf30417572e50e3427f195861d25d46e4435a696556a898b40
   md5: c8985329431780d56025998322650199
@@ -17754,6 +17855,75 @@ packages:
   license_family: GPL
   size: 2207518
   timestamp: 1785879951361
+- conda: https://prefix.dev/conda-forge/linux-64/markupsafe-3.0.3-py314h67df5f8_1.conda
+  sha256: c279be85b59a62d5c52f5dd9a4cd43ebd08933809a8416c22c3131595607d4cf
+  md5: 9a17c4307d23318476d7fbf0fedc0cde
+  depends:
+  - __glibc >=2.17,<3.0.a0
+  - libgcc >=14
+  - python >=3.14,<3.15.0a0
+  - python_abi 3.14.* *_cp314
+  constrains:
+  - jinja2 >=3.0.0
+  license: BSD-3-Clause
+  license_family: BSD
+  size: 27424
+  timestamp: 1772445227915
+- conda: https://prefix.dev/conda-forge/linux-aarch64/markupsafe-3.0.3-py314hb76de3f_1.conda
+  sha256: 383c188496d13a55658c06e61e7d4cdff2c9f9d5a0648769fca8250bece7e0ef
+  md5: e5de3c36dd548b35ff2a8aa49208dcb3
+  depends:
+  - libgcc >=14
+  - python >=3.14,<3.15.0a0
+  - python_abi 3.14.* *_cp314
+  constrains:
+  - jinja2 >=3.0.0
+  license: BSD-3-Clause
+  license_family: BSD
+  size: 27913
+  timestamp: 1772446407659
+- conda: https://prefix.dev/conda-forge/osx-64/markupsafe-3.0.3-py314h77fa6c7_1.conda
+  sha256: 74507b481299c3d35dc7d1c35f9c92e2e94e0eda819b264f5f25b7552f8a7d64
+  md5: 5d45a74270e21481797387a209b3dec3
+  depends:
+  - __osx >=11.0
+  - python >=3.14,<3.15.0a0
+  - python_abi 3.14.* *_cp314
+  constrains:
+  - jinja2 >=3.0.0
+  license: BSD-3-Clause
+  license_family: BSD
+  size: 26740
+  timestamp: 1772445674690
+- conda: https://prefix.dev/conda-forge/osx-arm64/markupsafe-3.0.3-py314h6e9b3f0_1.conda
+  sha256: 411153d14ee0d98be6e3751cf5cc0502db17bce2deebebb8779e33d29d0e525f
+  md5: d33c0a15882b70255abdd54711b06a45
+  depends:
+  - __osx >=11.0
+  - python >=3.14,<3.15.0a0
+  - python >=3.14,<3.15.0a0 *_cp314
+  - python_abi 3.14.* *_cp314
+  constrains:
+  - jinja2 >=3.0.0
+  license: BSD-3-Clause
+  license_family: BSD
+  size: 27256
+  timestamp: 1772445397216
+- conda: https://prefix.dev/conda-forge/win-64/markupsafe-3.0.3-py314h2359020_1.conda
+  sha256: 02805a0f3cd168dbf13afc5e4aed75cc00fe538ce143527a6471485b36f5887c
+  md5: 8de7b40f8b30a8fcaa423c2537fe4199
+  depends:
+  - python >=3.14,<3.15.0a0
+  - python_abi 3.14.* *_cp314
+  - ucrt >=10.0.20348.0
+  - vc >=14.3,<15
+  - vc14_runtime >=14.44.35208
+  constrains:
+  - jinja2 >=3.0.0
+  license: BSD-3-Clause
+  license_family: BSD
+  size: 30022
+  timestamp: 1772445159549
 - conda: https://prefix.dev/conda-forge/linux-64/matplotlib-base-3.11.1-py314h9a9c090_2.conda
   sha256: d76657ece6fef30e44fca988a0a884cf5744f2fb1611814c5c993700148fbefa
   md5: 57f668cbc4b70c11ea9d19ebed67295e
@@ -24682,6 +24852,111 @@ packages:
   license: Apache-2.0 OR Zlib
   size: 19610
   timestamp: 1782733547914
+- conda: https://prefix.dev/robostack-lyrical/linux-64/ros-lyrical-generate-parameter-library-1.3.0-hb0f4dca_25.conda
+  sha256: afa559e7fd78f891b0f5a65b9f4394b4def23d20650e3b8892616d3c4c34fddf
+  md5: 4564cc3b16a0f3b69988a1044ff56a0f
+  depends:
+  - ros2-generate-parameter-library ==1.3.0
+  size: 2098
+  timestamp: 1789512533433
+- conda: https://prefix.dev/robostack-lyrical/linux-aarch64/ros-lyrical-generate-parameter-library-1.3.0-he8cfe8b_23.conda
+  sha256: 5e13a51f0f18ffbcdc90201b2a3b020dad1b167eecbe5569cf787ad4fc2d6a41
+  md5: 65de5ea27f16d99c5389660cf504484f
+  depends:
+  - ros2-generate-parameter-library ==1.3.0
+  size: 2102
+  timestamp: 1789259513209
+- conda: https://prefix.dev/robostack-lyrical/osx-64/ros-lyrical-generate-parameter-library-1.1.0-np2py314hbbbd357_22.conda
+  sha256: 45126d8c3e89bb1e531ec42f936db08077651464a83ad355113d5ce4b5ad2b9f
+  md5: d280ee2f17502df3b712c8dd858480d5
+  depends:
+  - cpp-expected
+  - fmt
+  - python
+  - ros-lyrical-generate-parameter-library-py
+  - ros-lyrical-rclcpp
+  - ros-lyrical-rclcpp-lifecycle
+  - ros-lyrical-rclpy
+  - ros-lyrical-ros-workspace
+  - ros-lyrical-rsl
+  - ros-lyrical-tcb-span
+  - ros2-distro-mutex 0.18.* lyrical_*
+  - __osx >=11.0
+  - libcxx >=18
+  - fmt >=12.1.0,<12.2.0a0
+  - ros2-distro-mutex >=0.18.0,<0.19.0a0
+  - python_abi 3.14.* *_cp314
+  - numpy >=1.25,<3
+  license: BSD-3-Clause
+  size: 47160
+  timestamp: 1782793623122
+- conda: https://prefix.dev/robostack-lyrical/osx-arm64/ros-lyrical-generate-parameter-library-1.1.0-np2py314hdcb4947_22.conda
+  sha256: 566f22b42be7db8feec51a8f49b0df86d0d6cad474218a0adec76e4d0ae146fa
+  md5: 31205ecb9e12f7cd5489d316c4b9c50a
+  depends:
+  - cpp-expected
+  - fmt
+  - python
+  - ros-lyrical-generate-parameter-library-py
+  - ros-lyrical-rclcpp
+  - ros-lyrical-rclcpp-lifecycle
+  - ros-lyrical-rclpy
+  - ros-lyrical-ros-workspace
+  - ros-lyrical-rsl
+  - ros-lyrical-tcb-span
+  - ros2-distro-mutex 0.18.* lyrical_*
+  - __osx >=11.0
+  - libcxx >=18
+  - numpy >=1.25,<3
+  - fmt >=12.1.0,<12.2.0a0
+  - ros2-distro-mutex >=0.18.0,<0.19.0a0
+  - python_abi 3.14.* *_cp314
+  license: BSD-3-Clause
+  size: 47165
+  timestamp: 1782787379089
+- conda: https://prefix.dev/robostack-lyrical/win-64/ros-lyrical-generate-parameter-library-1.3.0-h9490d1a_23.conda
+  sha256: 172f09e43c3299554706092e44d9c760924d6ea1cd30ae935417fc3d9ce57396
+  md5: 0f4c0c32ad45d1be7e8d48d369a17273
+  depends:
+  - ros2-generate-parameter-library ==1.3.0
+  size: 2089
+  timestamp: 1789268371737
+- conda: https://prefix.dev/robostack-lyrical/osx-64/ros-lyrical-generate-parameter-library-py-1.1.0-np2py314h8fa4802_22.conda
+  sha256: e6e04fac3020d30ea01842a6c40bb14b4bc149b3a1f1fc704297bc281cf01bc0
+  md5: eb75178108c0366077a435f9de57773f
+  depends:
+  - jinja2
+  - python
+  - pyyaml
+  - ros-lyrical-ros-workspace
+  - ros2-distro-mutex 0.18.* lyrical_*
+  - typeguard
+  - libcxx >=18
+  - __osx >=11.0
+  - python_abi 3.14.* *_cp314
+  - ros2-distro-mutex >=0.18.0,<0.19.0a0
+  - numpy >=1.25,<3
+  license: BSD-3-Clause
+  size: 77197
+  timestamp: 1782732268458
+- conda: https://prefix.dev/robostack-lyrical/osx-arm64/ros-lyrical-generate-parameter-library-py-1.1.0-np2py314h1e5664e_22.conda
+  sha256: 98d86e0c26bc51841c98e8aa59660893479a5165bc2c395543309fbdf29f69cc
+  md5: e44b5c82c0fe488facdb82221acff933
+  depends:
+  - jinja2
+  - python
+  - pyyaml
+  - ros-lyrical-ros-workspace
+  - ros2-distro-mutex 0.18.* lyrical_*
+  - typeguard
+  - __osx >=11.0
+  - libcxx >=18
+  - python_abi 3.14.* *_cp314
+  - ros2-distro-mutex >=0.18.0,<0.19.0a0
+  - numpy >=1.25,<3
+  license: BSD-3-Clause
+  size: 77208
+  timestamp: 1782732021070
 - conda: https://prefix.dev/robostack-lyrical/osx-64/ros-lyrical-geometry-msgs-5.9.2-np2py314h8fa4802_22.conda
   sha256: e578a2501bc117bc4d37647431e09600a6b2c0ed376478415b95696e822523c9
   md5: 05fbe585982d43d7c1eeab1f71d977c6
@@ -31678,6 +31953,50 @@ packages:
   license: BSD-3-Clause OR Apache-2.0
   size: 91417
   timestamp: 1782788707051
+- conda: https://prefix.dev/robostack-lyrical/osx-64/ros-lyrical-rsl-1.3.0-np2py314h2abfc7c_22.conda
+  sha256: 802a93c63aad971aef0d8e7b3f88fd907d87e764f4fa551c3172f46ee580cb94
+  md5: 880010a5c33c66b6d289774cdc4bb511
+  depends:
+  - cpp-expected
+  - eigen
+  - fmt
+  - python
+  - ros-lyrical-rclcpp
+  - ros-lyrical-ros-workspace
+  - ros-lyrical-tcb-span
+  - ros2-distro-mutex 0.18.* lyrical_*
+  - __osx >=11.0
+  - libcxx >=18
+  - fmt >=12.1.0,<12.2.0a0
+  - ros2-distro-mutex >=0.18.0,<0.19.0a0
+  - graphviz >=14.1.2,<15.0a0
+  - numpy >=1.25,<3
+  - python_abi 3.14.* *_cp314
+  license: BSD-3-Clause
+  size: 60561
+  timestamp: 1782792774062
+- conda: https://prefix.dev/robostack-lyrical/osx-arm64/ros-lyrical-rsl-1.3.0-np2py314h701e7bc_22.conda
+  sha256: 61140cccdafcfa4ac81cf974d7532e87986370dca4397682160394075bc3fdd3
+  md5: df95a2e93765478615b0d8f8d64f2c6c
+  depends:
+  - cpp-expected
+  - eigen
+  - fmt
+  - python
+  - ros-lyrical-rclcpp
+  - ros-lyrical-ros-workspace
+  - ros-lyrical-tcb-span
+  - ros2-distro-mutex 0.18.* lyrical_*
+  - libcxx >=18
+  - __osx >=11.0
+  - fmt >=12.1.0,<12.2.0a0
+  - python_abi 3.14.* *_cp314
+  - numpy >=1.25,<3
+  - ros2-distro-mutex >=0.18.0,<0.19.0a0
+  - graphviz >=14.1.2,<15.0a0
+  license: BSD-3-Clause
+  size: 61831
+  timestamp: 1782786889247
 - conda: https://prefix.dev/robostack-lyrical/osx-64/ros-lyrical-rti-connext-dds-cmake-module-1.2.7-np2py314h8fa4802_22.conda
   sha256: 8dcd7afa3f7845e3f1c3409722f4a0b86b2efc47f8863bf7fba023944ad45c79
   md5: c0a7c06afc9f6346bd825a7d21bdb2d3
@@ -32458,6 +32777,36 @@ packages:
   license: Apache-2.0 OR Unlicense
   size: 535202
   timestamp: 1782734190336
+- conda: https://prefix.dev/robostack-lyrical/osx-64/ros-lyrical-tcb-span-2.0.3-np2py314h8fa4802_22.conda
+  sha256: dbe8363b451d265107f2ceaa7410fff781cdfa840a73208594ced430c9eae97c
+  md5: ca8c01567441f3c9224baea3d050ef30
+  depends:
+  - python
+  - ros-lyrical-ros-workspace
+  - ros2-distro-mutex 0.18.* lyrical_*
+  - __osx >=11.0
+  - libcxx >=18
+  - ros2-distro-mutex >=0.18.0,<0.19.0a0
+  - numpy >=1.25,<3
+  - python_abi 3.14.* *_cp314
+  license: BSL-1.0
+  size: 28360
+  timestamp: 1782733757631
+- conda: https://prefix.dev/robostack-lyrical/osx-arm64/ros-lyrical-tcb-span-2.0.3-np2py314h1e5664e_22.conda
+  sha256: 7d4444cbefbba97aac4ef848ce7fb17449160e6d24b58c036e7532a741c2b84a
+  md5: 3d96856214ce3bb4eab6fdd4b695483d
+  depends:
+  - python
+  - ros-lyrical-ros-workspace
+  - ros2-distro-mutex 0.18.* lyrical_*
+  - libcxx >=18
+  - __osx >=11.0
+  - ros2-distro-mutex >=0.18.0,<0.19.0a0
+  - numpy >=1.25,<3
+  - python_abi 3.14.* *_cp314
+  license: BSL-1.0
+  size: 28368
+  timestamp: 1782732926428
 - conda: https://prefix.dev/robostack-lyrical/osx-64/ros-lyrical-teleop-twist-joy-2.6.5-np2py314h8fa4802_22.conda
   sha256: 9addccfc83de2ff29c0d371e53c1268499b4d9d5374305ee82576dee1de7242b
   md5: 0cfa62688c058e29d594188eb052324b
@@ -38706,6 +39055,138 @@ packages:
   license: Apache-2.0 OR Zlib
   size: 17242
   timestamp: 1789232380632
+- conda: https://prefix.dev/robostack-lyrical/linux-64/ros2-generate-parameter-library-1.3.0-np2py314h79014b8_23.conda
+  sha256: 472d2e379e38fcaaab85f562b50d18771cef85811854362dc980edbff044d56c
+  md5: 4b107be426623634a394c34dc61d8b81
+  depends:
+  - cpp-expected
+  - fmt
+  - python
+  - ros2-distro-mutex 0.19.* lyrical_*
+  - ros2-generate-parameter-library-py
+  - ros2-rclcpp
+  - ros2-rclcpp-lifecycle
+  - ros2-rclpy
+  - ros2-ros-workspace
+  - ros2-rsl
+  - ros2-tcb-span
+  - __glibc >=2.28,<3.0.a0
+  - libgcc >=14
+  - libstdcxx >=14
+  - numpy >=1.25,<3
+  - python_abi 3.14.* *_cp314
+  - fmt >=12.1.0,<12.2.0a0
+  - ros2-distro-mutex >=0.19.0,<0.20.0a0
+  license: BSD-3-Clause
+  size: 52330
+  timestamp: 1789306720913
+- conda: https://prefix.dev/robostack-lyrical/linux-aarch64/ros2-generate-parameter-library-1.3.0-np2py314heff7773_23.conda
+  sha256: eb592c02652472631e4168615622e0611650cfe543e22832265b65602282cac0
+  md5: 93eee6a90338b6a58801b2c6fe03402c
+  depends:
+  - cpp-expected
+  - fmt
+  - python
+  - ros2-distro-mutex 0.19.* lyrical_*
+  - ros2-generate-parameter-library-py
+  - ros2-rclcpp
+  - ros2-rclcpp-lifecycle
+  - ros2-rclpy
+  - ros2-ros-workspace
+  - ros2-rsl
+  - ros2-tcb-span
+  - libgcc >=14
+  - libstdcxx >=14
+  - __glibc >=2.28,<3.0.a0
+  - fmt >=12.1.0,<12.2.0a0
+  - numpy >=1.25,<3
+  - ros2-distro-mutex >=0.19.0,<0.20.0a0
+  - python_abi 3.14.* *_cp314
+  license: BSD-3-Clause
+  size: 52302
+  timestamp: 1789256963419
+- conda: https://prefix.dev/robostack-lyrical/win-64/ros2-generate-parameter-library-1.3.0-np2py314hae7bab9_23.conda
+  sha256: f24fb74d04092ff839e717203089bc2860fe051273eca31a424d2275e86ecdd3
+  md5: 484254ed12d4d0655fc6bcc06f0b07b3
+  depends:
+  - cpp-expected
+  - fmt
+  - python
+  - ros2-distro-mutex 0.19.* lyrical_*
+  - ros2-generate-parameter-library-py
+  - ros2-rclcpp
+  - ros2-rclcpp-lifecycle
+  - ros2-rclpy
+  - ros2-ros-workspace
+  - ros2-rsl
+  - ros2-tcb-span
+  - vc >=14.3,<15
+  - vc14_runtime >=14.44.35208
+  - ucrt >=10.0.20348.0
+  - numpy >=1.25,<3
+  - fmt >=12.1.0,<12.2.0a0
+  - ros2-distro-mutex >=0.19.0,<0.20.0a0
+  - python_abi 3.14.* *_cp314
+  license: BSD-3-Clause
+  size: 44269
+  timestamp: 1789264767930
+- conda: https://prefix.dev/robostack-lyrical/linux-64/ros2-generate-parameter-library-py-1.3.0-np2py314hb48eaa3_23.conda
+  sha256: 82aff0896cd23bba4a3d36deb8386322dc9941f9eab61d37d24b564f278c19a7
+  md5: fb6075f1d038bbbdada85713f9931f43
+  depends:
+  - jinja2
+  - python
+  - pyyaml
+  - ros2-distro-mutex 0.19.* lyrical_*
+  - ros2-ros-workspace
+  - typeguard
+  - libstdcxx >=14
+  - libgcc >=14
+  - __glibc >=2.28,<3.0.a0
+  - ros2-distro-mutex >=0.19.0,<0.20.0a0
+  - python_abi 3.14.* *_cp314
+  - numpy >=1.25,<3
+  license: BSD-3-Clause
+  size: 76872
+  timestamp: 1789298024550
+- conda: https://prefix.dev/robostack-lyrical/linux-aarch64/ros2-generate-parameter-library-py-1.3.0-np2py314h2824dc6_23.conda
+  sha256: d52839459b75e573038337f8ef1ebbf7e4b59e55f13ff0fb9a07f5b4c3817ab2
+  md5: cb061b412cd941c33a1b55702c280922
+  depends:
+  - jinja2
+  - python
+  - pyyaml
+  - ros2-distro-mutex 0.19.* lyrical_*
+  - ros2-ros-workspace
+  - typeguard
+  - libgcc >=14
+  - __glibc >=2.28,<3.0.a0
+  - libstdcxx >=14
+  - ros2-distro-mutex >=0.19.0,<0.20.0a0
+  - numpy >=1.25,<3
+  - python_abi 3.14.* *_cp314
+  license: BSD-3-Clause
+  size: 76881
+  timestamp: 1789247029015
+- conda: https://prefix.dev/robostack-lyrical/win-64/ros2-generate-parameter-library-py-1.3.0-np2py314ha8c8437_23.conda
+  sha256: d2c04cf06d6fd69050d9c784f6ed6621c36603996850c0ad36fa0e5b04d63ab3
+  md5: 0185a68aa56a2def53f01c9c36dd0787
+  depends:
+  - jinja2
+  - python
+  - pyyaml
+  - ros2-distro-mutex 0.19.* lyrical_*
+  - ros2-ros-workspace
+  - typeguard
+  - vc >=14.3,<15
+  - vc14_runtime >=14.44.35208
+  - ucrt >=10.0.20348.0
+  - python_abi 3.14.* *_cp314
+  - numpy >=1.25,<3
+  - ros2-distro-mutex >=0.19.0,<0.20.0a0
+  license: BSD-3-Clause
+  size: 81664
+  timestamp: 1789222408562
 - conda: https://prefix.dev/robostack-lyrical/linux-64/ros2-geometry-msgs-5.9.3-np2py314hb48eaa3_23.conda
   sha256: f8fad7ed8adec26779d011bbbdd234ef5da560d8cecbcf553651048ccf1d3a9c
   md5: 362aa23ea77ab10c83163a9b56a406fb
@@ -49718,6 +50199,75 @@ packages:
   license: BSD-3-Clause OR Apache-2.0
   size: 103751
   timestamp: 1789272295829
+- conda: https://prefix.dev/robostack-lyrical/linux-64/ros2-rsl-1.3.0-np2py314hb3040b0_23.conda
+  sha256: bdc1ee5cae3edb32c8dde8221fe8312ab65b5bd5392801e0ea792fd5c10d68fd
+  md5: 5e84c08935b31d44f35e25686c751e08
+  depends:
+  - cpp-expected
+  - eigen
+  - fmt
+  - python
+  - ros2-distro-mutex 0.19.* lyrical_*
+  - ros2-rclcpp
+  - ros2-ros-workspace
+  - ros2-tcb-span
+  - libstdcxx >=14
+  - libgcc >=14
+  - __glibc >=2.28,<3.0.a0
+  - python_abi 3.14.* *_cp314
+  - ros2-distro-mutex >=0.19.0,<0.20.0a0
+  - graphviz >=14.1.2,<15.0a0
+  - fmt >=12.1.0,<12.2.0a0
+  - numpy >=1.25,<3
+  license: BSD-3-Clause
+  size: 65618
+  timestamp: 1789306466610
+- conda: https://prefix.dev/robostack-lyrical/linux-aarch64/ros2-rsl-1.3.0-np2py314h80c2281_23.conda
+  sha256: cc3b9d5a190c8a635550c0e084517a415549b577fdf176e5050d6e0e81b78762
+  md5: c76b787c7f5e9156dc5853bda02a76e7
+  depends:
+  - cpp-expected
+  - eigen
+  - fmt
+  - python
+  - ros2-distro-mutex 0.19.* lyrical_*
+  - ros2-rclcpp
+  - ros2-ros-workspace
+  - ros2-tcb-span
+  - libstdcxx >=14
+  - libgcc >=14
+  - __glibc >=2.28,<3.0.a0
+  - numpy >=1.25,<3
+  - graphviz >=14.1.2,<15.0a0
+  - fmt >=12.1.0,<12.2.0a0
+  - python_abi 3.14.* *_cp314
+  - ros2-distro-mutex >=0.19.0,<0.20.0a0
+  license: BSD-3-Clause
+  size: 67160
+  timestamp: 1789256337174
+- conda: https://prefix.dev/robostack-lyrical/win-64/ros2-rsl-1.3.0-np2py314h1eb901f_23.conda
+  sha256: 888e190f58bd156135950bf4ca321845abec86acc3a4efd200cb51ccfb96ad40
+  md5: 7720c303228491b24becc6570a9cebc3
+  depends:
+  - cpp-expected
+  - eigen
+  - fmt
+  - python
+  - ros2-distro-mutex 0.19.* lyrical_*
+  - ros2-rclcpp
+  - ros2-ros-workspace
+  - ros2-tcb-span
+  - vc >=14.3,<15
+  - vc14_runtime >=14.44.35208
+  - ucrt >=10.0.20348.0
+  - graphviz >=14.1.2,<15.0a0
+  - ros2-distro-mutex >=0.19.0,<0.20.0a0
+  - python_abi 3.14.* *_cp314
+  - numpy >=1.25,<3
+  - fmt >=12.1.0,<12.2.0a0
+  license: BSD-3-Clause
+  size: 87125
+  timestamp: 1789262309087
 - conda: https://prefix.dev/robostack-lyrical/linux-64/ros2-rti-connext-dds-cmake-module-1.2.7-np2py314hb48eaa3_23.conda
   sha256: 1f0d55cbf329574be2393e06da949b9bdb5c22112eb53c513dd01052205fbbf2
   md5: 6c692f286be6ff6540e8237ba2663d74
@@ -51012,6 +51562,54 @@ packages:
   license: Apache-2.0 OR Unlicense
   size: 536211
   timestamp: 1789235161012
+- conda: https://prefix.dev/robostack-lyrical/linux-64/ros2-tcb-span-2.0.3-np2py314hb48eaa3_23.conda
+  sha256: 6be926bc78416ff6234acdf9b9a5376a43ff0787090547f2cb8fbf35474470fc
+  md5: 51a02a9994d223bf350b2d81beebc27c
+  depends:
+  - python
+  - ros2-distro-mutex 0.19.* lyrical_*
+  - ros2-ros-workspace
+  - libgcc >=14
+  - libstdcxx >=14
+  - __glibc >=2.28,<3.0.a0
+  - ros2-distro-mutex >=0.19.0,<0.20.0a0
+  - numpy >=1.25,<3
+  - python_abi 3.14.* *_cp314
+  license: BSL-1.0
+  size: 27794
+  timestamp: 1789300923210
+- conda: https://prefix.dev/robostack-lyrical/linux-aarch64/ros2-tcb-span-2.0.3-np2py314h2824dc6_23.conda
+  sha256: d5c4458cab031f92d67fd6f602b3133e485e4f0ffe03bca07ffadc66a3e751f1
+  md5: ab2739b585b915b9b68fa8522361ce49
+  depends:
+  - python
+  - ros2-distro-mutex 0.19.* lyrical_*
+  - ros2-ros-workspace
+  - libgcc >=14
+  - __glibc >=2.28,<3.0.a0
+  - libstdcxx >=14
+  - ros2-distro-mutex >=0.19.0,<0.20.0a0
+  - python_abi 3.14.* *_cp314
+  - numpy >=1.25,<3
+  license: BSL-1.0
+  size: 27733
+  timestamp: 1789248438379
+- conda: https://prefix.dev/robostack-lyrical/win-64/ros2-tcb-span-2.0.3-np2py314ha8c8437_23.conda
+  sha256: e90b4bd3fe4ea00bdc45941ca92abc8d0b5c27c4f192470f6b0d2fbf8c09136d
+  md5: b182766b3fefc37942e70c767eef2272
+  depends:
+  - python
+  - ros2-distro-mutex 0.19.* lyrical_*
+  - ros2-ros-workspace
+  - vc >=14.3,<15
+  - vc14_runtime >=14.44.35208
+  - ucrt >=10.0.20348.0
+  - numpy >=1.25,<3
+  - python_abi 3.14.* *_cp314
+  - ros2-distro-mutex >=0.19.0,<0.20.0a0
+  license: BSL-1.0
+  size: 24922
+  timestamp: 1789226267236
 - conda: https://prefix.dev/robostack-lyrical/linux-64/ros2-teleop-twist-joy-2.6.5-np2py314hb48eaa3_23.conda
   sha256: 44121d1d93c5a2a94ec7848d32b45d5dc1e7d53380af859366cb678b1a3aef26
   md5: de6b9d96270d0d071b44f2c21e919d95
@@ -53985,6 +54583,19 @@ packages:
   license_family: MIT
   size: 21561
   timestamp: 1774492402955
+- conda: https://prefix.dev/conda-forge/noarch/typeguard-4.6.0-pyhcf101f3_0.conda
+  sha256: 82cb76b4dd554d1da90a9e1ea5f99e24aaa4997bcd19ceef8233fc17d9da432e
+  md5: a61716f1640d9986d5d6de1c4d140b42
+  depends:
+  - typing_extensions >=4.14.0
+  - python >=3.10
+  - python
+  constrains:
+  - pytest >=7
+  license: MIT
+  license_family: MIT
+  size: 38525
+  timestamp: 1785075519409
 - conda: https://prefix.dev/conda-forge/noarch/typing-extensions-4.16.0-h69aa097_0.conda
   sha256: b141933ece3518f6d7b75dfb59451e2f26b405a44c18e2518a83e9a02e09315c
   md5: c680b5747e8c4c8f23dca0bb7042a8fc

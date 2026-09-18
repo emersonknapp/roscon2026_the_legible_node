@@ -1,0 +1,6 @@
+/* Use the available viewport for interface tables while retaining Furo's
+ * responsive layout on narrow screens. Furo defaults to a 46em column. */
+.content {
+  width: 70rem;
+  max-width: 100%;
+}

@@ -32,6 +32,8 @@
   <test_depend>launch_testing_ament_cmake</test_depend>
   <test_depend>ros2nodl</test_depend>
 
+  <doc_depend>nodl_docgen</doc_depend>
+
   <export>
     <build_type>ament_cmake</build_type>
   </export>

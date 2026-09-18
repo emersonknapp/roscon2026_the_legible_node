@@ -32,6 +32,8 @@ ros-lyrical-message-filters = ">=7.4.1,<8"
 ros-lyrical-pcl-ros = "*"
 # Used by nodl_generator_cpp/_py to turn NoDL parameters into a parameter library
 ros-lyrical-generate-parameter-library = "*"
+# rosdoc2's Sphinx/MyST stack is not yet compatible with docutils 0.23.
+docutils = "<0.23"
 
 [tasks]
 # Clone source deps not available on the pixi/robostack channels (see deps.repos).
@@ -39,6 +41,11 @@ ros-lyrical-generate-parameter-library = "*"
 import-deps = "mkdir -p src/deps && vcs import src/deps < deps.repos"
 # Pull latest for the imported source deps
 update-deps = "vcs pull src/deps"
+
+[pypi-dependencies]
+# The conda build conflicts with RoboStack's cross-platform dependency pins.
+rosdoc2 = ">=0.2.1, <0.3"
+furo = ">=2025.12.19, <2026"
 
 [target.linux.dependencies]
 libgl-devel = "*"

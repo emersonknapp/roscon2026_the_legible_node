@@ -1,0 +1,17 @@
+---
+nodl_version: 2
+description: Subscriptions owned by tf2_ros::TransformListener.
+
+codegen:
+  cpp:
+    role: NO_GENERATE
+
+subscriptions:
+  - name: /tf
+    type: tf2_msgs/msg/TFMessage
+    qos: {history: KEEP_LAST, depth: 100, reliability: RELIABLE, durability: VOLATILE}
+    description: Dynamic transforms consumed by the transform listener.
+  - name: /tf_static
+    type: tf2_msgs/msg/TFMessage
+    qos: {history: KEEP_LAST, depth: 100, reliability: RELIABLE, durability: TRANSIENT_LOCAL}
+    description: Static transforms consumed by the transform listener.

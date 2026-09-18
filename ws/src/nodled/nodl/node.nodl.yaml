@@ -5,6 +5,7 @@ description: Occupancy-grid-map-based pointcloud outlier filter.
 include:
   - ref: nodl://nodl_common_interfaces/node
   - ref: local://radius_search_2d_filter.nodl.yaml
+  - ref: local://tf_listener.nodl.yaml
 
 parameters:
   map_frame:

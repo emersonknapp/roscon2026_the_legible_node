@@ -1,0 +1,11 @@
+---
+type: rosdoc2 config
+version: 1
+
+settings:
+    # This package has no Python API; the authored page documents its NoDL interface.
+  never_run_sphinx_apidoc: true
+  generate_package_index: true
+
+builders:
+  - sphinx: {name: nodl_ogmof, output_dir: ''}

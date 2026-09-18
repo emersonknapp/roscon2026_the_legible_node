@@ -34,11 +34,12 @@ ament_auto_find_build_dependencies()
 ##################
 # NoDL registration
 #
-# Publish the node's interface (and its filter-parameter include) to the
-# ament index so downstream tooling (`ros2 nodl ...`) and conformance tests
-# can find it.  The `local://` include is rewritten to `nodl://` on install,
-# so the sibling document must be registered in the same package.
+# Publish the node's interface and its included documents to the ament index
+# so downstream tooling (`ros2 nodl ...`) and conformance tests can find them.
+# The `local://` includes are rewritten to `nodl://` on install, so each
+# sibling document must be registered in the same package.
 ament_nodl_register(radius_search_2d_filter FILE nodl/radius_search_2d_filter.nodl.yaml)
+ament_nodl_register(tf_listener FILE nodl/tf_listener.nodl.yaml)
 ament_nodl_register(occupancy_grid_map_outlier_filter FILE nodl/node.nodl.yaml)
 
 ################

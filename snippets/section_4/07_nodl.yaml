@@ -1,0 +1,20 @@
+parameters:
+  map_frame:
+    type: string
+    description: Frame the occupancy grid map is expressed in.
+
+publishers:
+  - name: ~/output/pointcloud
+    type: sensor_msgs/msg/PointCloud2
+    qos:
+      history: KEEP_LAST
+      depth: 5
+      reliability: RELIABLE
+
+subscriptions:
+  - name: ~/input/occupancy_grid_map
+    type: nav_msgs/msg/OccupancyGrid
+    qos:
+      history: KEEP_LAST
+      depth: 1
+      reliability: RELIABLE

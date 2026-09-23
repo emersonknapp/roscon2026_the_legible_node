@@ -24,7 +24,7 @@ parameters:
     type: int
     default_value: 45
     description: |
-      Occupancy cost at or above which a cell is treated as a high-confidence
+      Occupancy cost above which a cell is treated as a high-confidence
       obstacle. Occupancy costs range from 0 (free) to 100 (occupied).
     validation:
       bounds: [0, 100]

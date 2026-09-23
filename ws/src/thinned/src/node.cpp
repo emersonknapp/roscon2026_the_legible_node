@@ -49,7 +49,9 @@ Node::Node(const rclcpp::NodeOptions & options)
 
   // Node extensions
   radius_search_mixin_ = std::make_optional<RadiusSearch2dFilterNodeMixin>(*get_node_parameters_interface());
-  radius_search_2d_filter_ = std::make_optional<RadiusSearch2dFilter>(radius_search_mixin_->config);
+  if (params_.use_radius_search_2d_filter) {
+    radius_search_2d_filter_ = std::make_optional<RadiusSearch2dFilter>(radius_search_mixin_->config);
+  }
   tf2_ = std::make_shared<tf2_ros::Buffer>(get_clock());
   tf2_listener_ = std::make_shared<tf2_ros::TransformListener>(*tf2_, *this);
 

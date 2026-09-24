@@ -15,9 +15,9 @@
 
   <buildtool_depend>ament_cmake_auto</buildtool_depend>
   <buildtool_depend>ament_nodl</buildtool_depend>
+  <buildtool_depend>nodl_common_interfaces</buildtool_depend>
   <buildtool_depend>nodl_generator_cpp</buildtool_depend>
 
-  <build_depend>nodl_common_interfaces</build_depend>
 
   <depend>geometry_msgs</depend>
   <depend>message_filters</depend>

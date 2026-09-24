@@ -25,7 +25,10 @@ jobs:
       - name: Import source dependencies
         run: pixi run import-deps
       - name: Build
-        run: pixi run colcon build --event-handlers compile_commands+ console_cohesion+ summary+
+        run: |-
+          pixi run colcon build \
+            --packages-up-to autoware_occupancy_grid_map_outlier_filter thin_ogmof nodl_ogmof \
+            --event-handlers compile_commands+ console_cohesion+ summary+
       - name: Test
         run: pixi run colcon test --executor sequential --event-handlers console_cohesion+
       - name: Test results

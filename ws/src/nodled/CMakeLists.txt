@@ -26,11 +26,7 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   endif()
 endif()
 
-find_package(ament_cmake REQUIRED)
 find_package(ament_cmake_auto REQUIRED)
-find_package(ament_nodl REQUIRED)
-find_package(nodl_generator_cpp REQUIRED)
-find_package(thin_ogmof REQUIRED)
 ament_auto_find_build_dependencies()
 
 ##################
@@ -91,6 +87,8 @@ install(
 # Tests
 
 if(BUILD_TESTING)
+  ament_auto_find_test_dependencies()
+
   # Smoke test: launch the node and assert its live interface matches the NoDL
   # document (base-class infrastructure endpoints are stripped automatically).
   nodl_add_conformance_test(occupancy_grid_map_outlier_filter_conformance

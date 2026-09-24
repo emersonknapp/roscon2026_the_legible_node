@@ -4,6 +4,9 @@ Materials from the ROSCon 2026 talk **"The Legible Node: Patterns and tools for 
 
 This repository collects the code that appears on the slides alongside a full, buildable workspace you can run yourself to explore the concepts discussed in the talk.
 
+> [!IMPORTANT]
+> **Talk slides:** [View or download *The Legible Node* (PDF)](./the_legible_node_slides.pdf).
+
 ## Repository layout
 
 - [snippets/](./snippets): Standalone code snippets shown directly on the slides, extracted for reference and readability.

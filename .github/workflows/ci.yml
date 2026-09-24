@@ -25,7 +25,7 @@ jobs:
       - name: Import source dependencies
         run: pixi run import-deps
       - name: Build
-        run: pixi run colcon build
+        run: pixi run colcon build --event-handlers console_direct+
       - name: Test
         run: pixi run colcon test
       - name: Test results

@@ -25,8 +25,8 @@ jobs:
       - name: Import source dependencies
         run: pixi run import-deps
       - name: Build
-        run: pixi run colcon build --event-handlers console_direct+
+        run: pixi run colcon build --event-handlers status- compile_commands+ console_cohesion+ summary+
       - name: Test
-        run: pixi run colcon test
+        run: pixi run colcon test --executor sequential --event-handlers console_cohesion+
       - name: Test results
         run: pixi run colcon test-result --verbose

@@ -3,4 +3,4 @@ repositories:
   nodl:
     type: git
     url: https://github.com/ros-tooling/nodl.git
-    version: main
+    version: emerson/tutorials-codegen-buildtool-depend

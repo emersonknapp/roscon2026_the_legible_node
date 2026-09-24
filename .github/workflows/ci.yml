@@ -22,6 +22,8 @@ jobs:
       - uses: prefix-dev/setup-pixi@v0.8.1
         with:
           manifest-path: ws/pixi.toml
+      - name: Import source dependencies
+        run: pixi run import-deps
       - name: Build
         run: pixi run colcon build
       - name: Test
